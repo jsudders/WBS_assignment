@@ -1,14 +1,20 @@
 package edu.curtin.app;
 
-import java.util.List;
+public abstract class TaskStructure {
+    protected String ID;
+    protected String description;
 
-public interface TaskStructure {
-    
-    void display(String indent);
+    abstract void display(String indent);
 
-    int calcEstTime();
+    abstract int calcEstTime();
 
-    void findTask(List<String> tasks, String search);
+    abstract TaskStructure findTask(String search);
+
+    abstract String printTask();
     
 }
 /* Tasks that are not broken down have optional effort estimate. all tasks have an ID and a short description */
+/*
+TODO: this format of searching seems to only work if I extend TaskParent rather than extending TaskStructure as taskStructure is an interface and cannot store variables
+this is because all of the ID's must be unique which makes things difficult
+ */
