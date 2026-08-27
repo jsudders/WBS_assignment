@@ -1,8 +1,9 @@
 package edu.curtin.app;
 import java.util.InputMismatchException;
 import java.util.Scanner;
+import java.util.logging.Level;
+import java.util.logging.Logger;
 
-import edu.curtin.app.Hello;
 
 
 
@@ -12,13 +13,12 @@ public class Menu {
 
     public int enterN(String prompt)
     {
-        int N;
         while(true)
         {
             System.out.println(prompt);
             try
             {
-                N = sc.nextInt();
+                int N = sc.nextInt();
                 log.fine(() -> "User entered " + N);
                 if(!(N >= 1))
                 {
@@ -27,30 +27,28 @@ public class Menu {
                 else
                 {
                     System.out.println("Entered: " + N);
-                    break;
+                    return N;
                 }
                 
             }
             catch(InputMismatchException e)
             {
-                logger.log("User entered a bad value for N");
+                log.log(Level.INFO, "User entered a bad value for N");
                 System.out.println("This format is not valid. Please enter a positive integer.");
                 sc.nextLine();
             }
             sc.nextLine();
         }
-        return N;
     }
 
     public String enterString(String prompt)
     {
-        String value;
         while(true)
         {
             System.out.println(prompt);
             try
             {
-                value = sc.nextLine();
+                String value = sc.nextLine();
                 log.fine(() -> "User entered " + value);
 
                 if(value.isEmpty())
@@ -60,14 +58,13 @@ public class Menu {
                 else
                 {
                     System.out.println("Entered " + value);
-                    
-                    break;
+                    return value;
                 }
             }
             catch (InputMismatchException e)
             {
-                logger.log("User entered a bad value for string");
-                System.out.println("This is not a valid string. please try again.")
+                log.log(Level.INFO, "User entered a bad value for string");
+                System.out.println("This is not a valid string. please try again.");
                 sc.nextLine();
             }
             sc.nextLine();
