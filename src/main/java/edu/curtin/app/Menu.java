@@ -9,7 +9,7 @@ import java.util.logging.Logger;
 
 public class Menu {
     Scanner sc = new Scanner(System.in);
-    private static final Logger log = Logger.getLogger(Hello.class.getName());
+    private static final Logger log = Logger.getLogger(Menu.class.getName());
 
     public int enterN(String prompt)
     {
