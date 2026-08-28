@@ -103,7 +103,7 @@ public class TaskParent extends TaskStructure{
         // TODO: maybe remove this if statement for logging, replace it when the findTask is used in the future
         if(foundTask == null)
         {
-            log.warning(() -> "Could not find task with ID: " + searchID);
+            log.finest(() -> "Could not find task with ID: " + searchID);
         }
         else
         {
