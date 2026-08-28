@@ -25,15 +25,19 @@ public class App {
 
     public void menu(String filename)
     {
+        TaskParent generalParent = null;
         boolean running = true;
-        while(running)
-        {
+        // do a while running loop, removed for now
             while(true) // while no valid file has been entered
             {
                 try
                 {
                     WBS_FileIO fileIO = new WBS_FileIO();
-                    fileIO.readWBS(filename);
+                    generalParent = fileIO.readWBS(filename);
+                    if(generalParent != null)
+                    {
+                        break;
+                    }
                 }
                 catch(IOException io)
                 {
@@ -54,7 +58,8 @@ public class App {
                 }
     
             }
+            generalParent.display("");
 
-        }
+        
     }
 }

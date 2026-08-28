@@ -10,7 +10,7 @@ public class WBS_FileIO {
     
     public TaskParent readWBS(String filename) throws IOException, WBSException // let output be task object and add exceptions
     {
-        TaskParent generalParent = new TaskParent("GEN", "");
+        TaskParent generalParent = new TaskParent("WBS BREAKDOWN STRUCTURE", "");
         log.fine(() -> "Created generalParent");
         try(BufferedReader reader = new BufferedReader(new FileReader(filename)))
         {
@@ -46,29 +46,26 @@ public class WBS_FileIO {
                     case 1: current task ID 
                     case 2: task description
                     case 3: only on tasks that are not broken down, effort estimate*/
-
-                    switch(lineParts.length)
-                    {
-                        case 2:
-                            log.info("BeforeStrip: " + lineParts[1]);
-                            task = lineParts[1].strip();
-                            log.info("Task : " + task);
-                            break;
+            
+                    log.info("BeforeStrip: " + lineParts[1]);
+                    task = lineParts[1].strip();
+                    log.info("Task : " + task);
+                
                             
-                        case 3: // description
-                            description = lineParts[2].strip();
-                            log.info("Description : " + description);
-                            break;
 
-                        case 4: // effort estimate
-                            estimate = Integer.parseInt(lineParts[3].strip());
-                            break;
-                        default:
-                            throw new WBSFormatException("Unknown data column in file.");
-                            // throw new WBSFormatException
-
-
+                    description = lineParts[2].strip();
+                    log.info("Description : " + description);
+                    
+                    if(lineParts.length == 4)
+                    {
+                        estimate = Integer.parseInt(lineParts[3].strip());
                     }
+                    else if (lineParts.length > 4)
+                    {
+                        throw new WBSFormatException("Unknown data column in file.");
+                    }
+
+                    
                     if(existingParent != null) // the task has a parent
                     {
                         if(lineParts.length <= 3) // the task does not have an effort category
@@ -77,9 +74,6 @@ public class WBS_FileIO {
                             // create the new task with existing parent
                             existingParent.addSubtask(newTaskParent, generalParent);
                             //  add the task as a subtask
-
-                            // remove this later
-                            newTaskParent.display("");
                         }
                         else if(lineParts.length == 4) // the task has an effort category, i.e. its a leaf
                         {
@@ -87,7 +81,10 @@ public class WBS_FileIO {
                             // create a new leaf with the existing parent, task and description
                             existingParent.addSubtask(newTaskLeaf, generalParent);
                             // add the subtask to the parent
-                            newTaskLeaf.display("");
+                            if(estimate != null)
+                            {
+                                newTaskLeaf.setEstTime(estimate);
+                            }
                         }
                     }
                     else // there is no parent
@@ -98,7 +95,6 @@ public class WBS_FileIO {
                             // create the new task with generalParent instead of existingParent
                             generalParent.addSubtask(newTaskParent, generalParent);
                             //  add the task as a subtask
-                            newTaskParent.display("");
                         }
                         else if(lineParts.length == 4) // the task has an effort category, i.e. its a leaf
                         {
@@ -106,11 +102,16 @@ public class WBS_FileIO {
                             // create a new leaf with generalparent
                             generalParent.addSubtask(newTaskLeaf, generalParent);
                             // add subtask
-                            newTaskLeaf.display("");
+                            if(estimate != null)
+                            {
+                                newTaskLeaf.setEstTime(estimate);
+                            }
+                            
                         }
                     }
                     //TODO: might be good to use a template pattern here for adding these
                     // also need to add estimate
+                    
                 }
                 line = reader.readLine();
             }

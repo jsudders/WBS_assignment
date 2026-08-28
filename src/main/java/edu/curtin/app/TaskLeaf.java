@@ -42,7 +42,7 @@ public class TaskLeaf extends TaskStructure {
         displayString = String.format("%s%s: %s", indent, this.ID, this.description);
         if(estTime != null)
         {
-            displayString = String.format("%s = %f", displayString, this.estTime);
+            displayString = String.format("%s = %d", displayString, this.estTime);
         }
 
         System.out.println(displayString);
