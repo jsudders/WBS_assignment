@@ -14,7 +14,7 @@ public class TaskParent extends TaskStructure{
         this.ID = ID;
         this.description = description;
         subtasks = new HashMap<>();
-        log.fine(() -> "Task parent created with ID: " + ID);
+        log.finest(() -> "Task parent created with ID: " + ID);
     }
 
     public TaskParent(TaskParent parent, String ID, String description)
@@ -23,7 +23,7 @@ public class TaskParent extends TaskStructure{
         this.ID = ID;
         this.description = description;
         subtasks = new HashMap<>();
-        log.fine(() -> "Task parent (with parent) created with ID: " + ID);
+        log.finest(() -> "Task parent (with parent) created with ID: " + ID);
     }
 
     public void addSubtask(TaskStructure task, TaskParent generalParent) throws WBSException
@@ -31,7 +31,7 @@ public class TaskParent extends TaskStructure{
         if((task != null) && (generalParent.findTask(task.ID) == null))
         {
             subtasks.put(task.ID, task);
-            log.fine(() -> "Subtask ID:" + task.ID + "added to Parent: " + this.ID);
+            log.finer(() -> "Subtask ID:" + task.ID + "added to Parent: " + this.ID);
         }
         else
         {

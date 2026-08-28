@@ -1,3 +1,34 @@
-build/
-.gradle/
+# Created by https://gitignore.org
+# Gradle.gitignore
+
+.gradle
+**/build/
+!**/src/**/build/
+
+# Ignore Gradle GUI config
+gradle-app.setting
+
+# Avoid ignoring Gradle wrapper jar file (.jar files are usually ignored)
+!gradle-wrapper.jar
+
+# Avoid ignore Gradle wrapper properties
+!gradle-wrapper.properties
+
+# Cache of project
+.gradletasknamecache
+
+# Eclipse Gradle plugin generated files
+# Eclipse Coreg
+.project
+# JDT-specific (Eclipse Java Development Tools)
+.classpath
+*.hprof
+
+# ignoring all bin directories
+/bin/
+**/bin/
+*.bin
+*.ser
+
 *.log
+*/logs/

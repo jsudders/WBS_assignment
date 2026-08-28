@@ -6,11 +6,12 @@ public class TaskLeaf extends TaskStructure {
     Integer estTime; // set as Integer so it can be null as it is optional
     private static final Logger log = Logger.getLogger(TaskParent.class.getName());
 
-    public TaskLeaf(TaskParent parent, String ID, String description)
+    public TaskLeaf(TaskParent parent, String ID, String description, Integer estTime)
     {
         this.parent = parent;
         this.ID = ID;
         this.description = description;
+        this.estTime = estTime;
         log.fine(() -> "Created TaskLeaf with ID: " + ID + " under parent: " + parent.ID);
     }
 

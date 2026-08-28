@@ -3,6 +3,7 @@ package edu.curtin.app;
 import java.io.BufferedReader;
 import java.io.FileReader;
 import java.io.IOException;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class WBS_FileIO {
@@ -18,16 +19,16 @@ public class WBS_FileIO {
             while(line != null)
             {
                 line = line.strip();
-                log.fine("Processing line: " + line);
+                log.log(Level.FINE, "Processing line: {0}", line);
                 if(!line.isEmpty())
                 {
                     String [] lineParts = line.split(";");
                     String parentTask = lineParts[0].strip();
                     log.info(() -> "ParentTask : " + parentTask);
-                    String task = "";
-                    String description = ""; // initialise
+                    String task;
+                    String description;
                     TaskParent existingParent = null;
-                    Integer estimate = null;
+                    Integer estimate;
 
                     if(!(parentTask.isBlank()) && !(parentTask.isEmpty()))
                     {
@@ -47,70 +48,31 @@ public class WBS_FileIO {
                     case 2: task description
                     case 3: only on tasks that are not broken down, effort estimate*/
             
-                    log.info("BeforeStrip: " + lineParts[1]);
                     task = lineParts[1].strip();
-                    log.info("Task : " + task);
-                
-                            
-
                     description = lineParts[2].strip();
-                    log.info("Description : " + description);
                     
-                    if(lineParts.length == 4)
+                    if(existingParent == null)
                     {
-                        estimate = Integer.parseInt(lineParts[3].strip());
+                        existingParent = generalParent;
                     }
-                    else if (lineParts.length > 4)
+                    
+                    switch(lineParts.length)
                     {
-                        throw new WBSFormatException("Unknown data column in file.");
+                        case 3 -> {
+                            // task does not have estimate category
+                            TaskParent newTaskParent = new TaskParent(existingParent, task, description);
+                            existingParent.addSubtask(newTaskParent, generalParent);
+                        }
+                        case 4 -> {
+                            // the task does have estimate category
+                            estimate = Integer.valueOf(lineParts[3].strip());
+                            TaskLeaf newTaskLeaf = new TaskLeaf(existingParent, task, description, estimate);
+                            existingParent.addSubtask(newTaskLeaf, generalParent);
+                        }
+                        default -> // task has less than 3 or more than 4 parts
+                            throw new WBSFormatException("This line is in an unknown format." + line);
                     }
 
-                    
-                    if(existingParent != null) // the task has a parent
-                    {
-                        if(lineParts.length <= 3) // the task does not have an effort category
-                        {
-                            TaskParent newTaskParent = new TaskParent(existingParent, task, description);
-                            // create the new task with existing parent
-                            existingParent.addSubtask(newTaskParent, generalParent);
-                            //  add the task as a subtask
-                        }
-                        else if(lineParts.length == 4) // the task has an effort category, i.e. its a leaf
-                        {
-                            TaskLeaf newTaskLeaf = new TaskLeaf(existingParent, task, description);
-                            // create a new leaf with the existing parent, task and description
-                            existingParent.addSubtask(newTaskLeaf, generalParent);
-                            // add the subtask to the parent
-                            if(estimate != null)
-                            {
-                                newTaskLeaf.setEstTime(estimate);
-                            }
-                        }
-                    }
-                    else // there is no parent
-                    {
-                        if(lineParts.length <= 3) // the task does not have an effort category
-                        {
-                            TaskParent newTaskParent = new TaskParent(generalParent, task, description);
-                            // create the new task with generalParent instead of existingParent
-                            generalParent.addSubtask(newTaskParent, generalParent);
-                            //  add the task as a subtask
-                        }
-                        else if(lineParts.length == 4) // the task has an effort category, i.e. its a leaf
-                        {
-                            TaskLeaf newTaskLeaf = new TaskLeaf(generalParent, task, description);
-                            // create a new leaf with generalparent
-                            generalParent.addSubtask(newTaskLeaf, generalParent);
-                            // add subtask
-                            if(estimate != null)
-                            {
-                                newTaskLeaf.setEstTime(estimate);
-                            }
-                            
-                        }
-                    }
-                    //TODO: might be good to use a template pattern here for adding these
-                    // also need to add estimate
                     
                 }
                 line = reader.readLine();
