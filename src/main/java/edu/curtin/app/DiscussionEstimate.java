@@ -6,6 +6,7 @@ public class DiscussionEstimate implements EffortEstimate {
     @Override
     public int getEffortEstimate(TaskLeaf task, List<Integer> estimates)
     {
+        System.out.println("---Discussion Estimate---");
         int finalEstimate;
         try(Scanner sc = new Scanner(System.in))
         {

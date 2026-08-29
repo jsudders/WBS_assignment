@@ -14,7 +14,7 @@ import java.util.logging.Logger;
 
 public class App {
     // either create a list of TaskStructure/Parents that don't have any parents or create a TaskStructure or TaskParent to house them all
-    TaskParent generalParent = new TaskParent(null, "", "");
+    TaskParent generalParent;
     private static final Logger log = Logger.getLogger(App.class.getName());
     int estimationConfiguration = 3;
     int numEstimates = 3;
@@ -32,20 +32,23 @@ public class App {
         // }
         // this isn't working for now, so i will fix it later
         String filename = "wbs_data.txt";
+        
         new App().menu(filename);
     }
 
     public void menu(String filename)
     {
         Scanner sc = new Scanner(System.in);
-        TaskParent generalParent = null;
         boolean running = true;
+        this.estimateOptions.put(1, new HighestEstimate());
+        this.estimateOptions.put(2, new MedianEstimate());
+        this.estimateOptions.put(3, new DiscussionEstimate());
         while(true) // while no valid file has been entered
         {
             try
             {
                 WBS_FileIO fileIO = new WBS_FileIO();
-                generalParent = fileIO.readWBS(filename);
+                this.generalParent = fileIO.readWBS(filename);
                 if(generalParent != null)
                 {
                     generalParent.display("");
@@ -69,8 +72,9 @@ public class App {
                 running = false;
                 break;
             }
-
         }
+        promptContinue(sc);
+        
         while(running)
         {
             int menuOption = getMenuOption(sc, "mainmenu");
@@ -88,17 +92,16 @@ public class App {
                         case 1 -> {
                             System.out.println("Chosen highest estimate.");
                             this.estimationConfiguration = 1;
-                            this.estimateOptions.put(approachOption, new HighestEstimate());
+                            
                         }
                         case 2 -> {
                             System.out.println("Chosen median estimate");
                             this.estimationConfiguration = 2;
-                            this.estimateOptions.put(approachOption, new MedianEstimate());
+                            
                         }
                         case 3 -> {
                             System.out.println("Chosen discussion.");
                             this.estimationConfiguration = 3;
-                            this.estimateOptions.put(approachOption, new DiscussionEstimate());
                         }
                     }
                 }
@@ -135,7 +138,10 @@ public class App {
             }
             try
             {
+                System.out.print("Option: ");
                 option = sc.nextInt();
+                System.out.println("");
+                log.log(Level.INFO, "User entered {0} for menu option", option);
                 if((option >= optionLower) && (option <= optionHigher))
                 {
                     return option;
@@ -143,11 +149,13 @@ public class App {
                 else
                 {
                     System.out.println("Please input an integer between " + optionLower + " and " + optionHigher);
+                    promptContinue(sc);
                 }
             }
             catch(InputMismatchException e)
             {
                 System.out.println("Please enter an integer between " + optionLower + " and " + optionHigher);
+                promptContinue(sc);
             }
         }
     }
@@ -160,14 +168,14 @@ public class App {
             try
             {
                 int N = sc.nextInt();
-                log.fine(() -> "User entered " + N);
+                log.log(Level.INFO, "User entered {0} for enterN.", N);
                 if(!(N >= 1))
                 {
                     System.out.println("Please enter a positive integer.");
                 }
                 else
                 {
-                    System.out.println("Entered: " + N);
+                    System.out.println("Entered: " + N + "\n");
                     return N;
                 }
                 
@@ -182,28 +190,23 @@ public class App {
         }
     }
 
-    public String enterString(String prompt, Scanner sc, boolean continuous)
+    public String enterString(String prompt, Scanner sc)
     {
-        do
+        while(true)
         {
             System.out.println(prompt);
             try
             {
-                String value = sc.nextLine();
-                log.fine(() -> "User entered " + value);
+                String value = sc.next();
+                log.log(Level.INFO, "User entered {0} for value", value);
 
                 if(value.isEmpty())
                 {
                     System.out.println("Please enter a valid string.");
-                    if(!continuous)
-                    {
-                        System.out.println("Exiting function.");
-                        return "";
-                    }
                 }
                 else
                 {
-                    System.out.println("Entered " + value);
+                    System.out.println("Entered " + value + "\n");
                     return value;
                 }
             }
@@ -212,20 +215,14 @@ public class App {
                 log.log(Level.INFO, "User entered a bad value for string");
                 System.out.println("This is not a valid string. please try again.");
                 sc.nextLine();
-                if(!continuous)
-                {
-                    System.out.println("Exiting function.");
-                    return "";
-                }
             }
             sc.nextLine();
-        } while(continuous);
-        return ""; // to avoid an error message, however if it gets to this point then it should fail
-    }
+        }
+    }        
 
     public static void printMainMenu()
     {
-        System.out.println("Welcome to WBS helper, please choose a menu option.");
+        System.out.println("\nWelcome to WBS helper, please choose a menu option.");
         System.out.println("1 - Estimate effort for task");
         System.out.println("2 - Configure estimation");
         System.out.println("0 - Quit");
@@ -246,6 +243,11 @@ public class App {
         System.out.println("Unknown tasks = " + unknownTasks);
     }
 
+    public void promptContinue(Scanner sc)
+    {
+        System.out.println("[Press enter to continue]\n");
+        sc.nextLine();
+    }
 
 
     public void performEstimates(Scanner sc)
@@ -254,13 +256,13 @@ public class App {
         String exitPrint = "Task ID is either invalid or does not exist. Exiting now.";
         try
         {
-            String taskID = enterString("Please enter the taskID (of any task) to set the effort estimates.", sc, false);
-            TaskStructure foundTask = generalParent.findTask(taskID);
+            String taskID = enterString("Please enter the taskID (of any task) to set the effort estimates.", sc);
+            TaskStructure foundTask = generalParent.findTask((taskID).strip());
             log.fine(() -> "User entered: " + taskID);
             if((foundTask == null) || (taskID.isEmpty())) 
             {
                 log.fine(() -> "Task not found");
-                throw new WBSFormatException(exitPrint);
+                throw new WBSFormatException("Task is null or empty");
             }
             List<TaskLeaf> leafList = new ArrayList<>();
             if(foundTask instanceof TaskParent taskParent)
@@ -289,7 +291,7 @@ public class App {
                 
                 Set<Integer> estimatesDupe = new HashSet<>(estimates); // maybe redo this and change it to something else, it feels slow
                 int newEstimate = estimates.get(0); // initialise in case all estimates are the same
-                if(estimatesDupe.size() != estimates.size())
+                if(estimatesDupe.size() != 1)
                 {
                     newEstimate = estimateType.getEffortEstimate(leaf, estimates);
                 }

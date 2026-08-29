@@ -96,9 +96,16 @@ public class TaskParent extends TaskStructure{
         }
         else
         {
-            for(TaskStructure task : subtasks.values())
+            if(subtasks != null)
             {
-                foundTask = task.findTask(searchID); // otherwise search the subtasks
+                log.finest("Task ID: " + this.ID + " has subtasks");
+                for(TaskStructure task : subtasks.values())
+                {
+                    if(foundTask == null)
+                    {
+                        foundTask = task.findTask(searchID); // otherwise search the subtasks
+                    }
+                }
             }
         }
         // TODO: maybe remove this if statement for logging, replace it when the findTask is used in the future

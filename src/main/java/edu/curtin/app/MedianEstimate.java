@@ -7,6 +7,7 @@ public class MedianEstimate implements EffortEstimate {
     @Override
     public int getEffortEstimate(TaskLeaf leaf, List<Integer> estimates)
     {
+        System.out.println("---Getting median estimate---");
         Collections.sort(estimates); // sort estimates
 
         int midPoint = estimates.size() / 2;
