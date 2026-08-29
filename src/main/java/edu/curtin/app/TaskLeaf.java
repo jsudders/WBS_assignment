@@ -26,6 +26,7 @@ public class TaskLeaf extends TaskStructure {
         if(inTime > 0)
         {
             estTime = inTime;
+            System.out.println("New effort estimate for task " + this.ID + " = " + inTime);
             log.fine(() -> "Time for ID " + this.ID + "set to " + inTime);
         }
         else

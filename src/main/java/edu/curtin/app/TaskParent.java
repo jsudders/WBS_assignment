@@ -1,6 +1,7 @@
 package edu.curtin.app;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.logging.Logger;
 
 public class TaskParent extends TaskStructure{
@@ -110,5 +111,33 @@ public class TaskParent extends TaskStructure{
             log.fine(() -> "Found task: " + searchID);
         }
         return foundTask;
+    }
+
+    public List<TaskLeaf> findRecursiveLeaves (List<TaskLeaf> leafList) throws WBSException
+    {
+        if(this.subtasks != null) // shouldn't happen if IO happens correctly
+        {
+            for (TaskStructure task : this.subtasks.values())
+            {
+                switch (task) {
+                    case TaskParent taskParent -> leafList = taskParent.findRecursiveLeaves(leafList);
+                    case TaskLeaf taskLeaf -> {
+                        if(!(leafList.contains(taskLeaf)))
+                        {
+                            leafList.add(taskLeaf);
+                        }
+                    }
+                    default -> {
+                        throw new WBSLogicException("Catastophic: Task is not formatted correctly.");
+                    }
+                }
+            }
+        }
+        else
+        {
+            log.severe(() -> "Task with ID: " + this.ID + " has no subtasks. Task should not be a parent.");
+            throw new WBSLogicException("Catastrophic: Task is not formatted correctly.");
+        }
+        return leafList;
     }
 }
