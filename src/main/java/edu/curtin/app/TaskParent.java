@@ -65,6 +65,14 @@ public class TaskParent extends TaskStructure{
         {
             printString = String.format("%s %s", this.parent.ID, printString);
         }
+        printString += "\n";
+        if(subtasks != null && !subtasks.isEmpty())
+        {
+            for(TaskStructure task : subtasks.values())
+            {
+                printString = String.format("%s%s", printString, task.printTask());
+            }
+        }
         return printString;
     }
 

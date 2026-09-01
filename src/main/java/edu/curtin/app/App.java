@@ -7,6 +7,7 @@ import java.util.HashSet;
 import java.util.InputMismatchException;
 import java.util.List;
 import java.util.Map;
+import java.util.NoSuchElementException;
 import java.util.Scanner;
 import java.util.Set;
 import java.util.logging.Level;
@@ -83,7 +84,7 @@ public class App {
                 case 1 -> {
                     performEstimates(sc);
 
-                 }
+                }
                 case 2 -> { 
                     numEstimates = enterN("Please enter the number of estimators for this program.", sc);
                     int approachOption = getMenuOption(sc, "approach");
@@ -106,6 +107,9 @@ public class App {
                     }
                 }
                 case 0 -> {
+                    System.out.println("Writing to file...");
+                    WBS_FileIO file_output = new WBS_FileIO();
+                    file_output.writeToWBS(filename, generalParent);
                     System.out.println("Goodbye.");
                     running = false;
                     break;
@@ -140,7 +144,7 @@ public class App {
             {
                 System.out.print("Option: ");
                 option = sc.nextInt();
-                System.out.println("");
+                promptContinue(sc);
                 log.log(Level.INFO, "User entered {0} for menu option", option);
                 if((option >= optionLower) && (option <= optionHigher))
                 {
@@ -154,8 +158,13 @@ public class App {
             }
             catch(InputMismatchException e)
             {
+                sc.nextLine();
                 System.out.println("Please enter an integer between " + optionLower + " and " + optionHigher);
                 promptContinue(sc);
+            }
+            catch(NoSuchElementException element)
+            {
+                System.out.println(element);
             }
         }
     }
@@ -168,6 +177,7 @@ public class App {
             try
             {
                 int N = sc.nextInt();
+                sc.nextLine();
                 log.log(Level.INFO, "User entered {0} for enterN.", N);
                 if(!(N >= 1))
                 {

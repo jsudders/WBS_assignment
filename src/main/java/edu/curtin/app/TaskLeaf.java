@@ -64,6 +64,7 @@ public class TaskLeaf extends TaskStructure {
         {
             printString = String.format("%s %s", this.parent.ID, printString);
         }
+        printString += "\n";
         return printString;
     }
     

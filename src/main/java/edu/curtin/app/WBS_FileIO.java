@@ -2,6 +2,7 @@ package edu.curtin.app;
 
 import java.io.BufferedReader;
 import java.io.FileReader;
+import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
@@ -84,6 +85,30 @@ public class WBS_FileIO {
             System.out.println("Error reading the file.");
         }
         return generalParent;
+    }
+
+    public void writeToWBS(String filename, TaskParent generalParent)
+    {
+        // try with resources print writer
+        // loop through generalParent children and write to file, make sure to exclude generalParent itself
+        try(FileWriter fw = new FileWriter(filename))
+        {
+            if(generalParent != null && fw != null)
+            {
+                if(!generalParent.subtasks.isEmpty())
+                {
+                    for(TaskStructure task : generalParent.subtasks.values())
+                    {
+                        fw.write(task.printTask());
+                    }
+                }
+            }
+        }
+        catch(IOException io)
+        {
+            log.severe("Error printing to file");
+            System.out.println("Error printing to file");
+        }
     }
     
 }
