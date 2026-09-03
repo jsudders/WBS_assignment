@@ -15,11 +15,12 @@ import java.util.logging.Logger;
 
 public class App {
     // either create a list of TaskStructure/Parents that don't have any parents or create a TaskStructure or TaskParent to house them all
-    TaskParent generalParent;
+    private TaskParent generalParent;
     private static final Logger log = Logger.getLogger(App.class.getName());
     int estimationConfiguration = 3;
     int numEstimates = 3;
     Map<Integer, EffortEstimate> estimateOptions = new HashMap<>();
+    private Scanner sc;
 
     public static void main(String[] args) {
         // if(args.length != 1) 
@@ -39,7 +40,7 @@ public class App {
 
     public void menu(String filename)
     {
-        Scanner sc = new Scanner(System.in);
+        this.sc = new Scanner(System.in);
         boolean running = true;
         this.estimateOptions.put(1, new HighestEstimate());
         this.estimateOptions.put(2, new MedianEstimate());
@@ -78,16 +79,16 @@ public class App {
         
         while(running)
         {
-            int menuOption = getMenuOption(sc, "mainmenu");
+            int menuOption = getMenuOption("mainmenu");
+            promptContinue(sc);
             switch(menuOption)
             {
                 case 1 -> {
                     performEstimates(sc);
-
                 }
                 case 2 -> { 
-                    numEstimates = enterN("Please enter the number of estimators for this program.", sc);
-                    int approachOption = getMenuOption(sc, "approach");
+                    numEstimates = enterN("Please enter the number of estimators for this program.");
+                    int approachOption = getMenuOption("approach");
                     switch(approachOption)
                     {
                         case 1 -> {
@@ -119,7 +120,7 @@ public class App {
         sc.close();
     }
 
-    public int getMenuOption(Scanner sc, String printOption)
+    public int getMenuOption(String printOption)
     {
         while(true)
         {
@@ -144,7 +145,6 @@ public class App {
             {
                 System.out.print("Option: ");
                 option = sc.nextInt();
-                promptContinue(sc);
                 log.log(Level.INFO, "User entered {0} for menu option", option);
                 if((option >= optionLower) && (option <= optionHigher))
                 {
@@ -153,23 +153,20 @@ public class App {
                 else
                 {
                     System.out.println("Please input an integer between " + optionLower + " and " + optionHigher);
-                    promptContinue(sc);
                 }
             }
             catch(InputMismatchException e)
             {
-                sc.nextLine();
                 System.out.println("Please enter an integer between " + optionLower + " and " + optionHigher);
-                promptContinue(sc);
             }
             catch(NoSuchElementException element)
             {
-                System.out.println(element);
+                System.out.println("Bullshit");
             }
         }
     }
 
-    public int enterN(String prompt, Scanner sc)
+    public int enterN(String prompt)
     {
         while(true)
         {
@@ -200,7 +197,7 @@ public class App {
         }
     }
 
-    public String enterString(String prompt, Scanner sc)
+    public String enterString(String prompt)
     {
         while(true)
         {
@@ -266,7 +263,7 @@ public class App {
         String exitPrint = "Task ID is either invalid or does not exist. Exiting now.";
         try
         {
-            String taskID = enterString("Please enter the taskID (of any task) to set the effort estimates.", sc);
+            String taskID = enterString("Please enter the taskID (of any task) to set the effort estimates.");
             TaskStructure foundTask = generalParent.findTask((taskID).strip());
             log.fine(() -> "User entered: " + taskID);
             if((foundTask == null) || (taskID.isEmpty())) 
@@ -290,7 +287,7 @@ public class App {
                 List<Integer> estimates = new ArrayList<>();
                 for(int i = 0; i < numEstimates; i++)
                 {
-                    estimates.add(enterN("Please enter the estimate for estimator " + (i + 1) + ": ", sc));
+                    estimates.add(enterN("Please enter the estimate for estimator " + (i + 1) + ": "));
                 }
                 
                 System.out.println("Estimates for task: " + leaf.ID);
@@ -303,7 +300,7 @@ public class App {
                 int newEstimate = estimates.get(0); // initialise in case all estimates are the same
                 if(estimatesDupe.size() != 1)
                 {
-                    newEstimate = estimateType.getEffortEstimate(leaf, estimates);
+                    newEstimate = estimateType.getEffortEstimate(this.sc, leaf, estimates);
                 }
                 leaf.setEstTime(newEstimate);
             }

@@ -1,1268 +1,1410 @@
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
 FINEST: Task parent created with ID: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
 FINE: Created generalParent
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: ; A ; Market research ; 10
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : 
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf <init>
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: WBS BREAKDOWN STRUCTURE ; A ; Market research ; 4
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: WBS BREAKDOWN STRUCTUREfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf <init>
 FINE: Created TaskLeaf with ID: A under parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
 FINE: Attempting to find task with ID: Afrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
 FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
 FINEST: Could not find task with ID: A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
 FINER: Subtask ID:Aadded to Parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: ; B ; Prototyping ; 45
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : 
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf <init>
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: WBS BREAKDOWN STRUCTURE ; B ; Prototyping ; 45
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: WBS BREAKDOWN STRUCTUREfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf <init>
 FINE: Created TaskLeaf with ID: B under parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
 FINE: Attempting to find task with ID: Bfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
 FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
 FINE: Search ID: B is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
 FINEST: Could not find task with ID: B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
 FINER: Subtask ID:Badded to Parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: ; C ; Game design
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : 
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
-FINEST: Task parent (with parent) created with ID: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Cfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: C is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: C is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Cadded to Parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: C ; D ; Identify core game concepts ; 15
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Cfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: C is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: C is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Cfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf <init>
-FINE: Created TaskLeaf with ID: D under parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Dfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: D is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: D is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Dfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Dadded to Parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: C ; E ; Develop basic storyline ; 25
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Cfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: C is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: C is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Cfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf <init>
-FINE: Created TaskLeaf with ID: E under parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Efrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: E is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: E is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Efrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: E is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Eadded to Parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: C ; F ; Develop game world and mechanics ; 55
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Cfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: C is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: C is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Cfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf <init>
-FINE: Created TaskLeaf with ID: F under parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ffrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: F is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: F is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ffrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: F is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: F is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Fadded to Parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: C ; G ; Specify game characters and abilities ;
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Cfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: C is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: C is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Cfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
-FINEST: Task parent (with parent) created with ID: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Gfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: G is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: G is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Gfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: G is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: G is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: G is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Gadded to Parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: ; H ; Game implementation
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : 
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
-FINEST: Task parent (with parent) created with ID: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Hadded to Parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: H ; I ; Artwork ; 90
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf <init>
-FINE: Created TaskLeaf with ID: I under parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ifrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: I is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: I is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ifrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: I is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: I is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: I is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ifrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ifrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Iadded to Parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: H ; J ; Coding
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: H is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Hfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
-FINEST: Task parent (with parent) created with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Jadded to Parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: J ; K ; Core game logic ;
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
-FINEST: Task parent (with parent) created with ID: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Kfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: K is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: K is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Kfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: K is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: K is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: K is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Kfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Kfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: K is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Kfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Kadded to Parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: J ; L ; Networking ; 35
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf <init>
-FINE: Created TaskLeaf with ID: L under parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Lfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: L is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: L is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Lfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: L is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: L is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: L is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Lfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Lfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: L is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Lfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Lfrom parent: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: K has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Ladded to Parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: J ; M ; Player interface ;
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: J is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Jfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
-FINEST: Task parent (with parent) created with ID: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Mfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: M is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: M is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Mfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: M is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: M is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: M is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Mfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Mfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: M is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Mfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Mfrom parent: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: K has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: M is not equal to task ID L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Madded to Parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: ; N ; Testing
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : 
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
-FINEST: Task parent (with parent) created with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: K has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: M has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Nadded to Parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: N ; O ; Functionality ;
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: K has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: M has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
-FINEST: Task parent (with parent) created with ID: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ofrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: O is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: O is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ofrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: O is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: O is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: O is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ofrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ofrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: O is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ofrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ofrom parent: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: K has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: O is not equal to task ID L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ofrom parent: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: M has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Ofrom parent: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: N has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Oadded to Parent: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: N ; P ; Playability ;
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: K has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: M has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
-FINEST: Task parent (with parent) created with ID: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Pfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: P is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: P is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Pfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: P is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: P is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: P is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Pfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Pfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: P is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Pfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Pfrom parent: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: K has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: P is not equal to task ID L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Pfrom parent: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: M has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Pfrom parent: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: N has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Pfrom parent: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: O has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Padded to Parent: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: N ; Q ; Rework ;
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: parentTask = N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: K has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: N is not equal to task ID L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: M has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Nfrom parent: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Found task: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
-FINEST: Task parent (with parent) created with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Qfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: Q is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: Q is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Qfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: Q is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: Q is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: Q is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Qfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Qfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: Q is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Qfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Qfrom parent: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: K has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: Q is not equal to task ID L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Qfrom parent: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: M has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Qfrom parent: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: N has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Qfrom parent: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: P has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Qfrom parent: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: O has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
-FINER: Subtask ID:Qadded to Parent: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-FINE: Processing line: ; R ; Release ;
-Aug 29, 2026 2:43:06 PM edu.curtin.app.WBS_FileIO readWBS
-INFO: ParentTask : 
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent <init>
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: WBS BREAKDOWN STRUCTURE ; R ; Release
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: WBS BREAKDOWN STRUCTUREfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
 FINEST: Task parent (with parent) created with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
 FINE: Attempting to find task with ID: Rfrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
 FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
 FINE: Search ID: R is not equal to task ID A
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
 FINE: Search ID: R is not equal to task ID B
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Rfrom parent: C
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: C has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: R is not equal to task ID D
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: R is not equal to task ID E
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: R is not equal to task ID F
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Rfrom parent: G
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: G has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
 FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Rfrom parent: H
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: H has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: R is not equal to task ID I
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Rfrom parent: J
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: J has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Rfrom parent: K
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: K has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskLeaf findTask
-FINE: Search ID: R is not equal to task ID L
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Rfrom parent: M
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: M has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Rfrom parent: N
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: N has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Rfrom parent: P
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: P has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Rfrom parent: Q
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: Q has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Rfrom parent: O
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Task ID: O has subtasks
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent findTask
-FINEST: Could not find task with ID: R
-Aug 29, 2026 2:43:06 PM edu.curtin.app.TaskParent addSubtask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
 FINER: Subtask ID:Radded to Parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:10 PM edu.curtin.app.App getMenuOption
-INFO: User entered 1 for menu option
-Aug 29, 2026 2:43:11 PM edu.curtin.app.App enterString
-INFO: User entered A for value
-Aug 29, 2026 2:43:11 PM edu.curtin.app.TaskParent findTask
-FINE: Attempting to find task with ID: Afrom parent: WBS BREAKDOWN STRUCTURE
-Aug 29, 2026 2:43:11 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: WBS BREAKDOWN STRUCTURE ; C ; Game design
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: WBS BREAKDOWN STRUCTUREfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
+FINEST: Task parent (with parent) created with ID: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
 FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
-Aug 29, 2026 2:43:11 PM edu.curtin.app.TaskLeaf findTask
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: C is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: C is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Cadded to Parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: C ; D ; Identify core game concepts ; 15
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: C is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: C is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf <init>
+FINE: Created TaskLeaf with ID: D under parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Dfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: D is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: D is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Dfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Dfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Dadded to Parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: C ; E ; Develop basic storyline ; 25
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: C is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: C is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf <init>
+FINE: Created TaskLeaf with ID: E under parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Efrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: E is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: E is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Efrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Efrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: E is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Eadded to Parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: C ; F ; Develop game world and mechanics ; 55
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: C is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: C is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf <init>
+FINE: Created TaskLeaf with ID: F under parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ffrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: F is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: F is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ffrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ffrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: F is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: F is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Fadded to Parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: C ; G ; Specify game characters and abilities
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: C is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: C is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Cfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
+FINEST: Task parent (with parent) created with ID: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Gfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: G is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: G is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Gfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Gfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: G is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: G is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: G is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Gadded to Parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: WBS BREAKDOWN STRUCTURE ; H ; Game implementation
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: WBS BREAKDOWN STRUCTUREfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
+FINEST: Task parent (with parent) created with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Hadded to Parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: H ; I ; Artwork ; 90
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf <init>
+FINE: Created TaskLeaf with ID: I under parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ifrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: I is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: I is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ifrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ifrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: I is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: I is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: I is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ifrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ifrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Iadded to Parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: H ; J ; Coding
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: H is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Hfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
+FINEST: Task parent (with parent) created with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Jadded to Parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: J ; K ; Core game logic
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
+FINEST: Task parent (with parent) created with ID: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Kfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: K is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: K is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Kfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Kfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: K is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: K is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: K is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Kfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Kfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: K is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Kfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: J has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Kadded to Parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: J ; L ; Networking ; 35
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf <init>
+FINE: Created TaskLeaf with ID: L under parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Lfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: L is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: L is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Lfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Lfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: L is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: L is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: L is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Lfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Lfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: L is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Lfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: J has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Lfrom parent: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: K has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Ladded to Parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: J ; M ; Player interface
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: J is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Jfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
+FINEST: Task parent (with parent) created with ID: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Mfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: M is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: M is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Mfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Mfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: M is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: M is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: M is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Mfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Mfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: M is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Mfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: J has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Mfrom parent: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: K has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: M is not equal to task ID L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Madded to Parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: WBS BREAKDOWN STRUCTURE ; N ; Testing
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: WBS BREAKDOWN STRUCTUREfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
+FINEST: Task parent (with parent) created with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: J has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: K has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: M has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Nadded to Parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: N ; P ; Playability
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: J has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: K has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: M has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
+FINEST: Task parent (with parent) created with ID: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Pfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: P is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: P is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Pfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Pfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: P is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: P is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: P is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Pfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Pfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: P is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Pfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: J has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Pfrom parent: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: K has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: P is not equal to task ID L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Pfrom parent: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: M has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Pfrom parent: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: N has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Padded to Parent: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: N ; Q ; Rework
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: J has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: K has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: M has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
+FINEST: Task parent (with parent) created with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Qfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: Q is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: Q is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Qfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Qfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: Q is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: Q is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: Q is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Qfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Qfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: Q is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Qfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: J has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Qfrom parent: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: K has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: Q is not equal to task ID L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Qfrom parent: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: M has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Qfrom parent: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: N has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Qfrom parent: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: P has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Qadded to Parent: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Processing line: N ; O ; Functionality
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: ParentTask : N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: parentTask = N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: J has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: K has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: N is not equal to task ID L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: M has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Nfrom parent: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent <init>
+FINEST: Task parent (with parent) created with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: O is not equal to task ID A
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: O is not equal to task ID B
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: R
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: R has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: C
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: C has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: O is not equal to task ID D
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: O is not equal to task ID E
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: O is not equal to task ID F
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: G
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: G has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: H
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: H has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: O is not equal to task ID I
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: J
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: J has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: K
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: K has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskLeaf findTask
+FINE: Search ID: O is not equal to task ID L
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: M
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: M has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: N
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: N has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: P
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: P has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Ofrom parent: Q
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: Q has subtasks
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent findTask
+FINEST: Could not find task with ID: O
+Sept 03, 2026 12:52:24 PM edu.curtin.app.TaskParent addSubtask
+FINER: Subtask ID:Oadded to Parent: N
+Sept 03, 2026 12:52:28 PM edu.curtin.app.App getMenuOption
+INFO: User entered 1 for menu option
+Sept 03, 2026 12:52:29 PM edu.curtin.app.App enterString
+INFO: User entered A for value
+Sept 03, 2026 12:52:29 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Afrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:29 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:29 PM edu.curtin.app.TaskLeaf findTask
 INFO: Found ID A
-Aug 29, 2026 2:43:11 PM edu.curtin.app.TaskParent findTask
+Sept 03, 2026 12:52:29 PM edu.curtin.app.TaskParent findTask
 FINE: Found task: A
-Aug 29, 2026 2:43:11 PM edu.curtin.app.App performEstimates
+Sept 03, 2026 12:52:29 PM edu.curtin.app.App performEstimates
 FINE: User entered: A
-Aug 29, 2026 2:43:13 PM edu.curtin.app.App enterN
-INFO: User entered 4 for enterN.
-Aug 29, 2026 2:43:13 PM edu.curtin.app.App enterN
+Sept 03, 2026 12:52:31 PM edu.curtin.app.App enterN
 INFO: User entered 3 for enterN.
-Aug 29, 2026 2:43:14 PM edu.curtin.app.App enterN
-INFO: User entered 2 for enterN.
-Aug 29, 2026 2:43:16 PM edu.curtin.app.TaskLeaf setEstTime
-FINE: Time for ID Aset to 5
+Sept 03, 2026 12:52:31 PM edu.curtin.app.App enterN
+INFO: User entered 5 for enterN.
+Sept 03, 2026 12:52:32 PM edu.curtin.app.App enterN
+INFO: User entered 7 for enterN.
+Sept 03, 2026 12:52:34 PM edu.curtin.app.TaskLeaf setEstTime
+FINE: Time for ID Aset to 6
+Sept 03, 2026 12:52:38 PM edu.curtin.app.App getMenuOption
+INFO: User entered 2 for menu option
+Sept 03, 2026 12:52:40 PM edu.curtin.app.App enterN
+INFO: User entered 1 for enterN.
+Sept 03, 2026 12:52:41 PM edu.curtin.app.App getMenuOption
+INFO: User entered 1 for menu option
+Sept 03, 2026 12:52:49 PM edu.curtin.app.App getMenuOption
+INFO: User entered 1 for menu option
+Sept 03, 2026 12:52:51 PM edu.curtin.app.App enterString
+INFO: User entered A for value
+Sept 03, 2026 12:52:51 PM edu.curtin.app.TaskParent findTask
+FINE: Attempting to find task with ID: Afrom parent: WBS BREAKDOWN STRUCTURE
+Sept 03, 2026 12:52:51 PM edu.curtin.app.TaskParent findTask
+FINEST: Task ID: WBS BREAKDOWN STRUCTURE has subtasks
+Sept 03, 2026 12:52:51 PM edu.curtin.app.TaskLeaf findTask
+INFO: Found ID A
+Sept 03, 2026 12:52:51 PM edu.curtin.app.TaskParent findTask
+FINE: Found task: A
+Sept 03, 2026 12:52:51 PM edu.curtin.app.App performEstimates
+FINE: User entered: A
+Sept 03, 2026 12:52:52 PM edu.curtin.app.App enterN
+INFO: User entered 6 for enterN.
+Sept 03, 2026 12:52:52 PM edu.curtin.app.TaskLeaf setEstTime
+FINE: Time for ID Aset to 6
+Sept 03, 2026 12:52:56 PM edu.curtin.app.App getMenuOption
+INFO: User entered 0 for menu option
