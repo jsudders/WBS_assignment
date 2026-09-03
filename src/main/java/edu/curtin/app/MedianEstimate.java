@@ -1,11 +1,12 @@
 package edu.curtin.app;
 import java.util.Collections;
 import java.util.List;
+import java.util.Scanner;
 
 public class MedianEstimate implements EffortEstimate {
     
     @Override
-    public int getEffortEstimate(TaskLeaf leaf, List<Integer> estimates)
+    public int getEffortEstimate(Scanner sc, TaskLeaf leaf, List<Integer> estimates)
     {
         System.out.println("---Getting median estimate---");
         Collections.sort(estimates); // sort estimates
@@ -23,4 +24,5 @@ public class MedianEstimate implements EffortEstimate {
             return (estimate1 + estimate2) / 2;
         }
     }
+
 }
