@@ -2,6 +2,7 @@ package edu.curtin.app;
 
 import java.util.HashMap;
 import java.util.List;
+import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class TaskParent extends TaskStructure{
@@ -63,7 +64,10 @@ public class TaskParent extends TaskStructure{
 
         if(this.parent != null)
         {
-            printString = String.format("%s %s", this.parent.ID, printString);
+            if(!this.parent.ID.equals("")) // if the parent is not the overall parent (helps print structure)
+            {
+                printString = String.format("%s %s", this.parent.ID, printString);
+            }
         }
         printString += "\n";
         if(subtasks != null && !subtasks.isEmpty())
@@ -135,12 +139,17 @@ public class TaskParent extends TaskStructure{
             for (TaskStructure task : this.subtasks.values())
             {
                 switch (task) {
-                    case TaskParent taskParent -> leafList = taskParent.findRecursiveLeaves(leafList);
+                    case TaskParent taskParent -> 
+                        {
+                            leafList = taskParent.findRecursiveLeaves(leafList);
+                            log.log(Level.INFO, "taskParent {0} found in recursives of {1}, now performing recursiveleaf on this.", new Object[]{taskParent.ID, this.ID});
+                        }   
                     case TaskLeaf taskLeaf -> {
                         if(!(leafList.contains(taskLeaf)))
                         {
                             leafList.add(taskLeaf);
                         }
+                        log.log(Level.INFO, "taskleaf {0} added to recursive list of {1}", new Object[]{taskLeaf.ID, this.ID});
                     }
                     default -> {
                         throw new WBSLogicException("Catastophic: Task is not formatted correctly.");

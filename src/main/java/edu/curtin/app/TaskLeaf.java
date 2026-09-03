@@ -55,14 +55,17 @@ public class TaskLeaf extends TaskStructure {
     {
         String printString;
 
-        printString = String.format("; %s ; %s", this.ID, this.description);
+        printString = String.format("; %s ; %s ;", this.ID, this.description);
         if(estTime != null)
         {
-            printString = String.format("%s ; %d", printString, estTime);
+            printString = String.format("%s %d", printString, estTime);
         }
         if(parent != null)
         {
-            printString = String.format("%s %s", this.parent.ID, printString);
+            if(!this.parent.ID.equals("")) // if the parent is not the general parent. skips the space of the parent for better fileIO format
+            {
+                printString = String.format("%s %s", this.parent.ID, printString);
+            }
         }
         printString += "\n";
         return printString;

@@ -12,7 +12,7 @@ public class WBS_FileIO {
     
     public TaskParent readWBS(String filename) throws IOException, WBSException // let output be task object and add exceptions
     {
-        TaskParent generalParent = new TaskParent("WBS BREAKDOWN STRUCTURE", "");
+        TaskParent generalParent = new TaskParent("", "");
         log.fine(() -> "Created generalParent");
         try(BufferedReader reader = new BufferedReader(new FileReader(filename)))
         {
@@ -23,9 +23,9 @@ public class WBS_FileIO {
                 log.log(Level.FINE, "Processing line: {0}", line);
                 if(!line.isEmpty())
                 {
-                    String [] lineParts = line.split(";");
+                    String [] lineParts = line.split(";", -1);
                     String parentTask = lineParts[0].strip();
-                    log.info(() -> "ParentTask : " + parentTask);
+                    log.fine(() -> "ParentTask : " + parentTask);
                     String task;
                     String description;
                     TaskParent existingParent = null;
@@ -33,7 +33,7 @@ public class WBS_FileIO {
 
                     if(!(parentTask.isBlank()) && !(parentTask.isEmpty()))
                     {
-                        log.info(() -> "parentTask = " + parentTask);
+                        log.fine(() -> "parentTask = " + parentTask);
                         existingParent = (TaskParent) generalParent.findTask(parentTask);
 
                         if(existingParent == null)
@@ -66,7 +66,14 @@ public class WBS_FileIO {
                         }
                         case 4 -> {
                             // the task does have estimate category
-                            estimate = Integer.valueOf(lineParts[3].strip());
+                            if(lineParts[3].equals("")) // if there is a line for estimates, but nothing in it, guard the Integer.valueOf whilst still adding the estimate
+                            {
+                                estimate = null; 
+                            }
+                            else
+                            {
+                                estimate = Integer.valueOf(lineParts[3].strip());
+                            }
                             TaskLeaf newTaskLeaf = new TaskLeaf(existingParent, task, description, estimate);
                             existingParent.addSubtask(newTaskLeaf, generalParent);
                         }
