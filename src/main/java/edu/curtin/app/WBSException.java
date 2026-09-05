@@ -5,4 +5,5 @@ public class WBSException extends Exception{
     {
         super(msg);
     }
+    // general WBS exception class
 }

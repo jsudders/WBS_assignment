@@ -23,19 +23,22 @@ public class App {
     private WBS_FileIO fileIO;
 
     public static void main(String[] args) {
-        // if(args.length != 1) 
-        // {
-        //     throw new InvalidParameterException("Please only have one argument, or surround the file path in quotes.");
-        //  } // Error
-        // else
-        // {
-        //     String filename = args[0];
-        //     new App().menu(filename);
-        // }
-        // this isn't working for now, so i will fix it later
-        String filename = "wbs_data.txt";
-        
-        new App().menu(filename);
+        try
+        {
+            if(args.length != 1) 
+            {
+                throw new IllegalArgumentException("Please only have one argument, or surround the file path in quotes.");
+            } // if there are more arguments than just the file name given (or no arguments at all), throw an IllegalArgumentException to gracefully end the program
+            else
+            {
+                String filename = args[0];
+                new App().menu(filename); // create a new menu object with the filename given as args[0]
+            }
+        }
+        catch(IllegalArgumentException e)
+        {
+            System.out.println(e); // if the IllegalArgumentException is thrown, print out the exception message and end the program
+        }
     }
 
     public void menu(String filename)
@@ -55,26 +58,41 @@ public class App {
                 if(generalParent != null) // as long as reading the file worked, display all tasks
                 {
                     generalParent.display("");
+                    
+                    int totalTime = generalParent.calcEstTime(); // calculate estimated time for the whole WBS structure
+                    int unknownTasks = TaskStructure.calcUnknownTasks(generalParent); // calculate how many leaves there are without estimated time
+
+                    if(unknownTasks == -1)
+                    {
+                        System.out.println("Unable to calculate the number of unknown tasks due to catastrophic error. Please review your WBS file and try again.");
+                        // if the recursive leaf function fails, unknownTasks is set to -1
+                        running = false; // the program will close because this is a catastrophic error. it is likely that this error in the task structure will be caught before this.
+                    }
+                    else
+                    {
+                        printEffortSummary(totalTime, unknownTasks); // if unknownTasks was successfully calculated, print the effort summary
+                    }
+
                     break;
                 }
                 else
-                {
+                { // if the generalParent is null, then the program has not read/saved the data from the file correctly. throw a WBSFormatException
                     throw new WBSFormatException("Unknown error occured whilst trying to read file. Make sure the file is in the correct format.");
                 }
             }
-            catch(IOException io)
+            catch(IOException io) // if the file doesn't exist, end the program
             {
                 System.out.println("Cannot open file. File is invalid. Please try again.");
                 running = false;
                 break;
             }
-            catch(WBSException fe)
+            catch(WBSException fe) // if any WBSException is thrown (from the WBSFormatException of not saving data correctly, or something that is otherwise thrown in the file reading), print the error and quit the program
             {
                 System.out.println(fe + ". Quitting program now.");
                 running = false;
                 break;
             }
-            catch(Exception e)
+            catch(Exception e) // catch-all at the end.
             {
                 log.severe(() -> "Unknown exception " + e);
                 System.out.println("Exception: " + e);
@@ -84,7 +102,7 @@ public class App {
         }
         promptContinue();
         
-        while(running)
+        while(running) // as long as none of the exceptions from above were thrown, start a loop for the menu
         {
             int menuOption = getMenuOption("mainmenu"); // send to get menu option with prompt
             
@@ -113,7 +131,7 @@ public class App {
                         } 
                     }// set the configuration for estimation which is used in performEstimates
                 }
-                case 0 -> {
+                case 0 -> { // case of quitting, write to the file
                     System.out.println("Writing to file...");
                     fileIO.writeToWBS(filename, generalParent);
                     System.out.println("Goodbye.");
@@ -129,10 +147,10 @@ public class App {
     {
         while(true)
         {
-            int option = 9; // option 9 isn't possible. failsafe in case bad scanner doesn't set initial option
+            int option; 
             int optionLower = 0;
             int optionHigher = 1; // initialise menu options 
-            switch(printOption)
+            switch(printOption) // print different menus depending on the menu option and also set the option limits per menu
             {
                 case "mainmenu" -> {
                     printMainMenu();
@@ -144,29 +162,30 @@ public class App {
                     optionLower = 1;
                     optionHigher = 3;
                 }
-                default -> { System.out.println("Internal error.");}
-            } // initialise option ranges to allow prompt to loop until user enters a valid option
+                default -> { System.out.println("Internal error.");} // this does not get executed in the current iteration
+            } // this will loop the prompt until the user enters a valid menu option
             try
             {
                 System.out.print("Option: ");
                 option = sc.nextInt();
-                sc.nextLine();
-                log.log(Level.FINE, "User entered {0} for menu option", option);
+                sc.nextLine(); // get the user input and clear the buffer
+                log.log(Level.FINE, "User entered {0} for menu option", option); // logging the menu option chosen
                 if((option >= optionLower) && (option <= optionHigher))
                 {
-                    promptContinue();
-                    return option;
+                    return option; // if the user input is a valid menu option, return the option
                 }
                 else
                 {
-                    sc.nextLine();
                     System.out.println(option + " is not a valid menu option. Please input an integer between " + optionLower + " and " + optionHigher);
+                    // if the user input is not within the option ranges, inform the user and loop the prompt again
                 }
             }
             catch(InputMismatchException e)
             {
-                sc.nextLine();
                 System.out.println("Input was not an integer. Please enter an integer between " + optionLower + " and " + optionHigher);
+                promptContinue();
+                // if the user input is not an integer,inform the user
+                // and  clear the buffer with promptContinue (as the initial buffer clearing wouldn't run) before looping the menu options again
             }
         }
     }
@@ -180,25 +199,25 @@ public class App {
             try
             {
                 int N = sc.nextInt();
-                sc.nextLine();
-                log.log(Level.FINE, "User entered {0} for enterN.", N);
+                sc.nextLine(); // get the entry for N and clear the buffer
+                log.log(Level.FINE, "User entered {0} for enterN.", N); // log the user's menu option
                 if(!(N >= 1)) // guard in case user enters a non-positive or 0
                 {
                     System.out.println("Please enter a positive integer.");
                 }
                 else
                 {
-                    return N;
+                    return N;  // if the user entry is valid, return it
                 }
                 
             }
             catch(InputMismatchException e)
             {
-                log.log(Level.FINE, "User entered a bad value for N");
+                log.log(Level.FINE, "User entered a bad value for N"); // log that the input was invalid
                 System.out.println("This format is not valid. Please enter a positive integer.");
                 promptContinue();
+                // inform user and clear buffer (executed in promptContinue)
             }
-            sc.nextLine();
         }
     }
 
@@ -208,26 +227,19 @@ public class App {
         {
             System.out.println(prompt);
             System.out.print(enterLine);
-            try
-            {
-                String value = sc.next();
-                log.log(Level.FINE, "User entered {0} for value", value);
 
-                if(value.isEmpty())
-                {
-                    System.out.println("Please enter a valid string.");
-                }
-                else
-                {
-                    return value;
-                }
-            }
-            catch (InputMismatchException e)
+            String value = sc.next(); // take the next line of user input for value
+            log.log(Level.FINE, "User entered {0} for value", value); // log what the user inputted
+            sc.nextLine(); // clear the buffer
+            if(value.isEmpty()) // guard in case the value is empty
             {
-                log.log(Level.FINE, "User entered a bad value for string");
-                System.out.println("This is not a valid string. please try again.");
+                System.out.println("Please enter a valid string."); 
             }
-            promptContinue();
+            else
+            {
+                return value; // if the value is not empty, then the value is valid and it is returned
+            }
+            // the only exceptions thrown by .next() and .nextLine() are NoSuchElementException or IllegalStateException, neither of which should appear in this block of code
         }
     }
 
@@ -250,14 +262,14 @@ public class App {
 
     public static void printEffortSummary(int totalEffort, int unknownTasks)
     {
-        System.out.println("Total known effort = " + totalEffort);
+        System.out.println("\nTotal known effort = " + totalEffort);
         System.out.println("Unknown tasks = " + unknownTasks);
     }
 
     public void promptContinue()
     {
         System.out.println("[Press enter to continue]");
-        sc.nextLine();
+        sc.nextLine(); // clears buffer and allows a break in the code for users to read the output
     }
 
 
@@ -268,10 +280,10 @@ public class App {
             String taskID = enterString("Please enter the taskID (of any task) to set the effort estimates.", "TaskID: ");
             TaskStructure foundTask = generalParent.findTask((taskID).strip());
             // get the taskID for the estimating task and get the taskStructure for it.
-            log.info(() -> "User entered: " + taskID);
+            log.info(() -> "User entered: " + taskID + " for perform estimates"); // log user input and the performing of estimate
             if((foundTask == null) || (taskID.isEmpty())) 
             {
-                log.info(() -> "Task not found");
+                log.info(() -> "Task not found"); // log that the task cannot be found
                 throw new WBSFormatException("Task ID is either invalid or doesn't exist.");
                 // if the task cannot be found within the structure or the taskID is empty, throw an error
             }
@@ -303,12 +315,12 @@ public class App {
                 }
                 
                 Set<Integer> estimatesDupe = new HashSet<>(estimates);  // duplicate the task estimates into a hashset (which can't have duplicates)
-                // maybe redo this and change it to something else, it feels slow
                 int newEstimate = estimates.get(0); // initialise in case all estimates are the same
                 if(estimatesDupe.size() != 1) // if the hashSet's size is not 1 (i.e. the estimates from all the estimators are not the same), then get the effort estimate with the configuration
                 {
                     newEstimate = estimateType.getEffortEstimate(this.sc, leaf, estimates);
                 }
+                log.log(Level.INFO, "Estimate for {0} set to be {1}", new Object[] {leaf.ID, newEstimate});
                 leaf.setEstTime(newEstimate);
                 // set the new estimated time for the leaf.
             }
@@ -318,7 +330,7 @@ public class App {
         }
         catch(WBSException wbs)
         {
-            System.out.println(wbs + " Exiting now.");
+            System.out.println(wbs + " Exiting now."); // graceful quit
         }
     }
 }

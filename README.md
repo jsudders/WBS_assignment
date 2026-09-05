@@ -1,33 +1,10 @@
-Base Java Project
-=================
-
-This is a [Gradle][]-based Java project structure. Provided you have the [OpenJDK][] installed, the `gradlew` script will take care of all other dependencies.
-
-[Java]: https://docs.oracle.com/javase/tutorial/
-[Gradle]: https://gradle.org/
-[OpenJDK]: https://adoptium.net/temurin/releases/
-
-Put your source code in `src/main/java` (or in further subdirectories inside that, according to package). To change the name or package of the main class, make sure to update the `mainClass` line in the configuration file `build.gradle.kts`.
-
 
 ## Running
 
 To run your code (for debugging purposes), invoke the `gradlew` script with a `run` argument:
 
 ```
-./gradlew run
-```
-
-If you need to provide command-line arguments:
-
-```
-./gradlew run --args="arg1 arg2 arg3"
-```
-
-If you run into permission problems:
-
-```
-bash gradlew run
+gradlew run --args="filepath"
 ```
 
 
@@ -50,8 +27,43 @@ Look up and fix any of the [PMD warnings](), or [suppress][] them if/where appro
 [suppress]: https://docs.pmd-code.org/latest/pmd_userdocs_suppressing_warnings.html
 
 
-## Logging
+# Criteria
+## a) General code quality
 
-This project configures logging ([java.util.logging][]) so that you don't need to. Simply obtain logger objects with `Logger.getLogger()`, and insert logging statements where appropriate.
 
-[java.util.logging]: https://docs.oracle.com/en/java/javase/21/core/java-logging-overview.html
+## b) Use of map or dictionary
+
+
+## c) Clear and distinct class/interface/method responsibilities
+
+### App
+
+### Task Structure
+
+### Effort Estimate
+
+### WBS_FileIO
+
+### WBSException
+
+
+### Other
+
+The only thing that I was not sure about was moving performEstimates into TaskStructure as a concrete method. This would make more sense responsibility wise, however it would require either creating an App object to access the scanner, estimations, generalParent, etc, which moves some responsibilities (such as user input) into TaskStructure where it shouldn't be, or passing all this data through the function which becomes convoluted and messy.
+
+As such, I decided to keep performEstimates in the App class as this function mainly requires user input, which is apart of the App's responsibilities.
+
+## d) Appropriate error handling and logging
+
+
+## e) Appropriate use of either the Strategy Pattern or Template Methid Pattern
+
+
+## f) Appropriate use of either the Decorator Pattern or Composite Pattern
+
+
+## g) Clear and Correct UML class diagram of your whole application
+
+
+## h) Penalty marks for code that doesn't work, or doesn't fully address the Problem Description
+To my knowledge, all of my code works, with graceful endings or exceptions thrown and guards for invalid input.

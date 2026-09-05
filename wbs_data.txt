@@ -1,6 +1,6 @@
-; A ; Market research ; 6
+; A ; Market research ; 4
 ; B ; Prototyping ; 45
-; R ; Release ;
+; R ; Release ; 4
 ; C ; Game design
 C ; D ; Identify core game concepts ; 15
 C ; E ; Develop basic storyline ; 25

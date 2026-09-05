@@ -13,14 +13,14 @@ public class WBS_FileIO {
     public TaskParent readWBS(String filename) throws IOException, WBSException // let output be task object and add exceptions
     {
         TaskParent generalParent = new TaskParent("", "");
-        log.fine(() -> "Created generalParent");
-        try(BufferedReader reader = new BufferedReader(new FileReader(filename)))
+        log.fine(() -> "Created generalParent"); // initialise generalParent with no taskID and no description
+        try(BufferedReader reader = new BufferedReader(new FileReader(filename))) // try to open a bufferedReader with a fileReader from given filename
         {
             String line = reader.readLine();
-            while(line != null)
+            while(line != null) // while there is still lines in the file
             {
                 line = line.strip();
-                log.log(Level.FINE, "Processing line: {0}", line);
+                log.log(Level.INFO, "Processing line: {0}", line); // strip the line and log the line that is being processed
                 if(!line.isEmpty())
                 {
                     String task;
@@ -29,19 +29,18 @@ public class WBS_FileIO {
                     Integer estimate;
                     String [] lineParts = line.split(";", -1); // split the line with the limit as -1 so that blank estimates can be found
                     String parentTask = lineParts[0].strip(); // parent ID is set to the fist part of the line
-                    log.fine(() -> "ParentTask : " + parentTask);
-                    
 
                     if(!(parentTask.isBlank()) && !(parentTask.isEmpty())) // if the line has a parentTask
                     {
-                        log.fine(() -> "parentTask = " + parentTask);
+                        log.fine(() -> "\tParentTask = " + parentTask);
                         existingParent = (TaskParent) generalParent.findTask(parentTask); // find the taskStructure in the WBS owner
 
                         if(existingParent == null) // if the task cannot be found, through an error
                         {
                             log.severe(() -> "Parent: " + parentTask + "does not exist");
-                            throw new WBSException("The parent on line: " + line + " does not exist");
-                        } // it is possible to change this to adding a new task parent (in case the file just has the definition of the parent further down), however, this can be an issue
+                            throw new WBSFormatException("The parent on line: " + line + " does not exist");
+                        } // it is possible to change this to adding a new task parent (in case the file just has the definition of the parent further down)
+                        //  however, this can be an issue if its due to user error instead of file formatting
                     }
                     task = lineParts[1].strip();
                     description = lineParts[2].strip();
@@ -58,6 +57,7 @@ public class WBS_FileIO {
                             // task does not have estimate category
                             TaskParent newTaskParent = new TaskParent(existingParent, task, description);
                             existingParent.addSubtask(newTaskParent, generalParent);
+                            // create the taskParent and add it as a subtask to the taskparent
                         }
                         case 4 -> {
                             // the task does have estimate category
@@ -71,9 +71,10 @@ public class WBS_FileIO {
                             }
                             TaskLeaf newTaskLeaf = new TaskLeaf(existingParent, task, description, estimate);
                             existingParent.addSubtask(newTaskLeaf, generalParent);
+                            // create a new task leaf and add it as a subtask to the taskparent
                         }
                         default -> // task has less than 3 or more than 4 parts
-                            throw new WBSFormatException("This line is in an unknown format." + line);
+                            throw new WBSFormatException("This line is in an unknown format." + line); 
                     }
 
                     
@@ -83,10 +84,11 @@ public class WBS_FileIO {
         }
         catch (IOException io)
         {
-            log.warning(() -> "Reading file failed with error: " + io);
+            log.severe(() -> "Reading file failed with error: " + io);
             System.out.println("Error reading the file.");
         }
         return generalParent;
+        // if an error occurs, such as IOException, the generalParent will be null and the program will be closed when this is processed
     }
 
     public void writeToWBS(String filename, TaskParent generalParent)
@@ -110,7 +112,8 @@ public class WBS_FileIO {
         {
             log.severe("Error printing to file");
             System.out.println("Error printing to file");
-        } 
+            // as the file writing is only handled when the file is closed, this IOException is unlikely to matter as an IOException will already be thrown during the reading of the file
+        }
     }
     
 }
