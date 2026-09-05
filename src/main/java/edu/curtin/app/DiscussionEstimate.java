@@ -1,6 +1,7 @@
 package edu.curtin.app;
 import java.util.List;
 import java.util.Scanner;
+import java.util.InputMismatchException;
 
 public class DiscussionEstimate implements EffortEstimate {
     @Override
@@ -12,8 +13,8 @@ public class DiscussionEstimate implements EffortEstimate {
         {
             try
             {
-                System.out.println("Please discuss among yourselves for the effort estimate of the task: " + task.ID);
-                System.out.println("When you are ready. Please enter an integer for the new effort estimate.");
+                System.out.println("Please discuss among yourselves for the effort estimate of the task: " + task.ID + " and enter an integer for the new effort estimate.");
+                System.out.print("Estimate for" + task.ID +": ");
                 finalEstimate = sc.nextInt();
                 if(finalEstimate <= 0)
                 {
@@ -29,6 +30,11 @@ public class DiscussionEstimate implements EffortEstimate {
             {
                 sc.nextLine();
                 System.out.println("You have not entered a valid positive integer. Please try again.");
+            }
+            catch(InputMismatchException mismatch)
+            {
+                sc.nextLine(); // clear buffer
+                System.out.println("No valid integer was entered for " + task.ID + " please try again.\n");
             }
         }
         

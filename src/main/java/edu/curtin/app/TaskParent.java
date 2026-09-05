@@ -110,7 +110,7 @@ public class TaskParent extends TaskStructure{
         {
             if(subtasks != null)
             {
-                log.finest("Task ID: " + this.ID + " has subtasks");
+                log.log(Level.FINEST, "Task ID: {0} has subtasks", this.ID);
                 for(TaskStructure task : subtasks.values())
                 {
                     if(foundTask == null)

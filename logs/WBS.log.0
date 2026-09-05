@@ -1,8 +1,4 @@
-Sept 03, 2026 1:47:56 PM edu.curtin.app.App performEstimates
-INFO: User entered: N
-Sept 03, 2026 1:47:56 PM edu.curtin.app.TaskParent findRecursiveLeaves
-INFO: taskleaf P added to recursive list of N
-Sept 03, 2026 1:47:56 PM edu.curtin.app.TaskParent findRecursiveLeaves
-INFO: taskleaf Q added to recursive list of N
-Sept 03, 2026 1:47:56 PM edu.curtin.app.TaskParent findRecursiveLeaves
-INFO: taskleaf O added to recursive list of N
+Sept 05, 2026 11:38:35 AM edu.curtin.app.TaskLeaf findTask
+INFO: Found ID A
+Sept 05, 2026 11:38:35 AM edu.curtin.app.App performEstimates
+INFO: User entered: A

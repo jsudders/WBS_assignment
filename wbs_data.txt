@@ -1,4 +1,4 @@
-; A ; Market research ; 10
+; A ; Market research ; 6
 ; B ; Prototyping ; 45
 ; R ; Release ;
 ; C ; Game design

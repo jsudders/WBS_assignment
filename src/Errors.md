@@ -1,29 +1,32 @@
+# Fixed
+
+**Estimate for tasks complete without input**
+Error(s):
+- [Estimate effort] -> [Parent task] = "Estimates for task completed" without entering any input.
+- Estimates for J only creating estimates for L
+- Estimates for H only creating estimates for I and L
+
+Fix:
+File IO did not classify these tasks as leaves because they did not have a preset estimate and the split function did not include the last section. Fixed this by changing split limit to -1
+
+**Entering a character on menu causing problems**
+Errors:
+- String on main menu causing infinite loop
+- String on discussion estimate crashing
+
+Fix:
+Infinite loop - no sc.nextLine() / clearing buffer
+Crashing - no exception for non integer
+
+**Estimate effort doesn't specify which leaf tasks the estimates are for until after estimates are entered**
+Fix: State leaf before entry
+
 # Critical
-
-[Estimate effort] -> [Parent task] = "Estimates for task completed" without entering any input.
-List of Tasks that this does it for
-- R (release)
-- O (functionality)
-- Q (Rework)
-- P (playability)
-- N (testing)
-- M (Player interface)
-- K
-
-
-
-Entering estimates for J only created estimates for L
-Entering estimates for H only did I and L
-
-
-Despite above, the structure prints fine, therefore its a loop error
-
-ERRORS ABOVE OCCUR BECAUSE THEY ARE BEING MARKED AS TASKPARENTS IN FILE IO
-
-
-Entering a string on main menu -> Infinite loop
+- Fix app to run with file name as argument
+- Fix intro printing to remove tab from first parents
+- Add "Press Enter to Continue" to some functions and make sure it doesn't skip it
+    - 
 
 # Syntax and ease of use
-FIXED [Estimate effort] -> [Parent task] = does not specify which leaf task the estimates are for until the end
-
-- Should have a \n before estimates
+- Have text when printing to file
+- Remove Entered: because it takes up space

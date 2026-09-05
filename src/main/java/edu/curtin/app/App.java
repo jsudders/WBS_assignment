@@ -87,14 +87,14 @@ public class App {
         while(running)
         {
             int menuOption = getMenuOption("mainmenu"); // send to get menu option with prompt
-            promptContinue();
+            
             switch(menuOption)
             {
                 case 1 -> {
                     performEstimates(); // if option 1, perform estimates.
                 }
                 case 2 -> { 
-                    numEstimates = enterN("Please enter the number of estimators for this program."); // get the number of estimators and set it to local estimates variable
+                    numEstimates = enterN("Please enter the number of estimators for this program.", "Estimators: "); // get the number of estimators and set it to local estimates variable
                     int approachOption = getMenuOption("approach"); // print approach options and get the choice
                     switch(approachOption)
                     {
@@ -150,28 +150,33 @@ public class App {
             {
                 System.out.print("Option: ");
                 option = sc.nextInt();
+                sc.nextLine();
                 log.log(Level.FINE, "User entered {0} for menu option", option);
                 if((option >= optionLower) && (option <= optionHigher))
                 {
+                    promptContinue();
                     return option;
                 }
                 else
                 {
-                    System.out.println("Please input an integer between " + optionLower + " and " + optionHigher);
+                    sc.nextLine();
+                    System.out.println(option + " is not a valid menu option. Please input an integer between " + optionLower + " and " + optionHigher);
                 }
             }
             catch(InputMismatchException e)
             {
-                System.out.println("Please enter an integer between " + optionLower + " and " + optionHigher);
+                sc.nextLine();
+                System.out.println("Input was not an integer. Please enter an integer between " + optionLower + " and " + optionHigher);
             }
         }
     }
 
-    public int enterN(String prompt) // Scanner logic for entering N (number of estimators)
+    public int enterN(String prompt, String enterLine) // Scanner logic for entering N (number of estimators)
     {
         while(true)
         {
             System.out.println(prompt);
+            System.out.print(enterLine);
             try
             {
                 int N = sc.nextInt();
@@ -183,7 +188,6 @@ public class App {
                 }
                 else
                 {
-                    System.out.println("Entered: " + N + "\n");
                     return N;
                 }
                 
@@ -192,17 +196,18 @@ public class App {
             {
                 log.log(Level.FINE, "User entered a bad value for N");
                 System.out.println("This format is not valid. Please enter a positive integer.");
-                sc.nextLine();
+                promptContinue();
             }
             sc.nextLine();
         }
     }
 
-    public String enterString(String prompt) // Scanner logic for entering strings (such as task ID)
+    public String enterString(String prompt, String enterLine) // Scanner logic for entering strings (such as task ID)
     {
         while(true)
         {
             System.out.println(prompt);
+            System.out.print(enterLine);
             try
             {
                 String value = sc.next();
@@ -214,7 +219,6 @@ public class App {
                 }
                 else
                 {
-                    System.out.println("Entered " + value + "\n");
                     return value;
                 }
             }
@@ -222,7 +226,6 @@ public class App {
             {
                 log.log(Level.FINE, "User entered a bad value for string");
                 System.out.println("This is not a valid string. please try again.");
-                sc.nextLine();
             }
             promptContinue();
         }
@@ -253,25 +256,23 @@ public class App {
 
     public void promptContinue()
     {
-        System.out.println("[Press enter to continue]\n");
+        System.out.println("[Press enter to continue]");
         sc.nextLine();
     }
 
 
     public void performEstimates()
     {
-        
-        String exitPrint = "Task ID is either invalid or does not exist. Exiting now.";
         try
         {
-            String taskID = enterString("Please enter the taskID (of any task) to set the effort estimates.");
+            String taskID = enterString("Please enter the taskID (of any task) to set the effort estimates.", "TaskID: ");
             TaskStructure foundTask = generalParent.findTask((taskID).strip());
             // get the taskID for the estimating task and get the taskStructure for it.
             log.info(() -> "User entered: " + taskID);
             if((foundTask == null) || (taskID.isEmpty())) 
             {
                 log.info(() -> "Task not found");
-                throw new WBSFormatException("Task is null or empty");
+                throw new WBSFormatException("Task ID is either invalid or doesn't exist.");
                 // if the task cannot be found within the structure or the taskID is empty, throw an error
             }
             List<TaskLeaf> leafList = new ArrayList<>(); // initialise a leafList for the instance that task entered was a parent and estimates are needed for each subtask.
@@ -291,7 +292,7 @@ public class App {
                 List<Integer> estimates = new ArrayList<>(); // initialise ArrayList to keep all of the estimates in
                 for(int i = 0; i < numEstimates; i++)
                 {
-                    estimates.add(enterN("Please enter the estimate for estimator " + (i + 1) + ": "));
+                    estimates.add(enterN("", "Please enter the estimate for estimator " + (i + 1) + ": "));
                     // get the estimates for each estimator
                 }
                 
@@ -313,10 +314,11 @@ public class App {
             }
 
             System.out.println("\nEstimates for task " + foundTask.ID + " (and subtask(s) if applicable) completed.\n");
+            promptContinue();
         }
         catch(WBSException wbs)
         {
-            System.out.println(exitPrint + "FAIL");
+            System.out.println(wbs + " Exiting now.");
         }
     }
 }

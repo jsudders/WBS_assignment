@@ -23,36 +23,31 @@ public class WBS_FileIO {
                 log.log(Level.FINE, "Processing line: {0}", line);
                 if(!line.isEmpty())
                 {
-                    String [] lineParts = line.split(";", -1);
-                    String parentTask = lineParts[0].strip();
-                    log.fine(() -> "ParentTask : " + parentTask);
                     String task;
                     String description;
                     TaskParent existingParent = null;
                     Integer estimate;
+                    String [] lineParts = line.split(";", -1); // split the line with the limit as -1 so that blank estimates can be found
+                    String parentTask = lineParts[0].strip(); // parent ID is set to the fist part of the line
+                    log.fine(() -> "ParentTask : " + parentTask);
+                    
 
-                    if(!(parentTask.isBlank()) && !(parentTask.isEmpty()))
+                    if(!(parentTask.isBlank()) && !(parentTask.isEmpty())) // if the line has a parentTask
                     {
                         log.fine(() -> "parentTask = " + parentTask);
-                        existingParent = (TaskParent) generalParent.findTask(parentTask);
+                        existingParent = (TaskParent) generalParent.findTask(parentTask); // find the taskStructure in the WBS owner
 
-                        if(existingParent == null)
+                        if(existingParent == null) // if the task cannot be found, through an error
                         {
                             log.severe(() -> "Parent: " + parentTask + "does not exist");
                             throw new WBSException("The parent on line: " + line + " does not exist");
-                        }
+                        } // it is possible to change this to adding a new task parent (in case the file just has the definition of the parent further down), however, this can be an issue
                     }
-
-                    
-                    /* case 0: ID of parent task
-                    case 1: current task ID 
-                    case 2: task description
-                    case 3: only on tasks that are not broken down, effort estimate*/
-            
                     task = lineParts[1].strip();
                     description = lineParts[2].strip();
+                    // all taskStructures have this information, so preset task and description
                     
-                    if(existingParent == null)
+                    if(existingParent == null) // if the task is not a subtask of anything, set the parent to be the WBS owner
                     {
                         existingParent = generalParent;
                     }
@@ -72,7 +67,7 @@ public class WBS_FileIO {
                             }
                             else
                             {
-                                estimate = Integer.valueOf(lineParts[3].strip());
+                                estimate = Integer.valueOf(lineParts[3].strip()); // if there is already an estimate present, strip the line and add it to the taskLeaf
                             }
                             TaskLeaf newTaskLeaf = new TaskLeaf(existingParent, task, description, estimate);
                             existingParent.addSubtask(newTaskLeaf, generalParent);
@@ -83,7 +78,7 @@ public class WBS_FileIO {
 
                     
                 }
-                line = reader.readLine();
+                line = reader.readLine(); // read the next line
             }
         }
         catch (IOException io)
@@ -96,26 +91,26 @@ public class WBS_FileIO {
 
     public void writeToWBS(String filename, TaskParent generalParent)
     {
-        // try with resources print writer
+        // try with resources file writer
         // loop through generalParent children and write to file, make sure to exclude generalParent itself
         try(FileWriter fw = new FileWriter(filename))
         {
-            if(generalParent != null && fw != null)
+            if(generalParent != null && fw != null) // if initialisation of filewriter worked and WBS structure is valid
             {
-                if(!generalParent.subtasks.isEmpty())
+                if(!generalParent.subtasks.isEmpty()) // if the WBS owner has subtasks
                 {
-                    for(TaskStructure task : generalParent.subtasks.values())
+                    for(TaskStructure task : generalParent.subtasks.values()) // loop through each subtask and print the values
                     {
                         fw.write(task.printTask());
                     }
                 }
             }
         }
-        catch(IOException io)
+        catch(IOException io) // catch any IO exception
         {
             log.severe("Error printing to file");
             System.out.println("Error printing to file");
-        }
+        } 
     }
     
 }
