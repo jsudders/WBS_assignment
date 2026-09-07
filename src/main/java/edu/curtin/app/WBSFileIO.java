@@ -119,12 +119,6 @@ public class WBSFileIO {
 
     public static void writeToWBS(String filename, HashMap<String, TaskStructure> baseTasks)
     {
-        // if the baseTasks is already empty/null (should have had an error thrown before this), do not attempt to write to file as this will override the data (whilst incorrect) and give an empty file
-        if(baseTasks.isEmpty() || baseTasks == null)
-        {
-            System.out.println("WBS doesnt exist. Quitting now.");
-            return;
-        }
         try(FileWriter fw = new FileWriter(filename)) // try with resources file writer
         {
             for(TaskStructure task : baseTasks.values()) // for each baseTask, print it (if its a parent task, it will also print subtasks)
@@ -132,9 +126,6 @@ public class WBSFileIO {
                 fw.write(task.printTask());
             }
             System.out.println("File successfully written to.");
-
-            log.severe("BaseTasks is empty or file is null");
-            System.out.println("Error printing to file.");
         }
         catch(IOException io) // catch any IO exception
         {

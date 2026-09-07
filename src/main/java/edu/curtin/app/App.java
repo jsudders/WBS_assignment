@@ -16,7 +16,7 @@ public class App {
     private static final Logger log = Logger.getLogger(App.class.getName());
     private int estimationConfiguration = 3;
     private int numEstimates = 3;
-    private Map<Integer, EffortEstimate> estimateOptions = new HashMap<>();
+    private final Map<Integer, EffortEstimate> estimateOptions = new HashMap<>();
     private Scanner sc;
     private HashMap<String, TaskStructure> baseTasks;
 
@@ -93,10 +93,9 @@ public class App {
             System.out.println("WBSLogicException " + L.getMessage() + " The WBS does not make logical sense... Quitting program now.");
             running = false;
         }
-        catch(Exception e) // catch-all at the end.
+        catch(WBSException e) // catch-all at the end.
         {
-            log.severe(() -> "Other exception " + e);
-            System.out.println("Exception: " + e);
+            System.out.println("WBSException: " + e + " Quitting now.");
             running = false;
         }
         promptContinue();
