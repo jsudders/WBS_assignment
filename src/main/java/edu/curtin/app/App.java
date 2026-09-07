@@ -18,7 +18,6 @@ public class App {
     private int numEstimates = 3;
     private Map<Integer, EffortEstimate> estimateOptions = new HashMap<>();
     private Scanner sc;
-    private WBS_FileIO fileIO;
     private HashMap<String, TaskStructure> baseTasks;
 
     public static void main(String[] args) {
@@ -50,9 +49,7 @@ public class App {
         // pre-set the options for estimates for strategy method
         try
         {
-        
-            this.fileIO = new WBS_FileIO(); // generate a new fileIO instance to read and write to the file
-            this.baseTasks = fileIO.readWBS(filename); // reading file gives a map of all basetasks that don't have a parent
+            this.baseTasks = WBSFileIO.readWBS(filename); // reading file gives a map of all basetasks that don't have a parent
         
             if((baseTasks != null) && !(baseTasks.isEmpty())) // as long as reading the file worked, display all tasks
             {
@@ -86,9 +83,14 @@ public class App {
             System.out.println("Cannot open file. File is invalid. Please try again.");
             running = false;
         }
-        catch(WBSException fe) // if any WBSException is thrown (from the WBSFormatException of not saving data correctly, or something that is otherwise thrown in the file reading), print the error and quit the program
+        catch(WBSFormatException fe) // if any WBSException is thrown (from the WBSFormatException of not saving data correctly, or something that is otherwise thrown in the file reading), print the error and quit the program
         {
             System.out.println("WBSFormatException " + fe.getMessage() + ".. Quitting program now.");
+            running = false;
+        }
+        catch(WBSLogicException L)
+        {
+            System.out.println("WBSLogicException " + L.getMessage() + " The WBS does not make logical sense... Quitting program now.");
             running = false;
         }
         catch(Exception e) // catch-all at the end.
@@ -130,7 +132,7 @@ public class App {
                 }
                 case 0 -> { // case of quitting, write to the file
                     System.out.println("Writing to file...");
-                    fileIO.writeToWBS(filename, baseTasks);
+                    WBSFileIO.writeToWBS(filename, baseTasks);
                     running = false;
                     break;
                 }
@@ -283,8 +285,8 @@ public class App {
 
             if((foundTask == null) || (taskID.isEmpty())) // if the task cannot be found within the structure or the taskID is empty, throw an error
             {
-                log.info(() -> "Task not found"); 
-                throw new WBSFormatException("Task ID is either invalid or doesn't exist.");
+                log.info(() -> "Task not found");
+                throw new WBSException("Task ID is either invalid or doesn't exist.");
             }
 
             List<TaskLeaf> leafList = new ArrayList<>(); // initialise a leafList for the instance that task entered was a parent and estimates are needed for each subtask.
@@ -297,8 +299,6 @@ public class App {
             {
                 leafList.add((TaskLeaf) foundTask);
             }
-
-            EffortEstimate estimateType = estimateOptions.get(estimationConfiguration); // get the estimationType based on configuration
             
             for (TaskLeaf leaf : leafList) // looping through each task in the leafList
             {
@@ -320,7 +320,7 @@ public class App {
                 int newEstimate = estimates.get(0); // initialise in case all estimates are the same
                 if(estimatesDupe.size() != 1) // if the hashSet's size is not 1 (i.e. the estimates from all the estimators are not the same), then get the effort estimate with the configuration
                 {
-                    newEstimate = estimateType.getEffortEstimate(this.sc, leaf, estimates);
+                    newEstimate = (estimateOptions.get(estimationConfiguration)).getEffortEstimate(this.sc, leaf, estimates);
                 }
                 log.log(Level.INFO, "Estimate for {0} set to be {1}", new Object[] {leaf.ID, newEstimate});
                 leaf.setEstTime(newEstimate);

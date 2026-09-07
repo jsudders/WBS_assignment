@@ -5,5 +5,5 @@ public class WBSLogicException extends WBSException {
     {
         super(msg);
     }
-    // occurs when something went wrong with the addition of tasks to the task structure. This is an internal error and is used mostly as a "just in case" for the final product
+    //WBSLogicException class, used when the file is formatted correctly, but it does not make sense for WBS structure, or when a user tries to input data that does not comply with the WBS structure
 }

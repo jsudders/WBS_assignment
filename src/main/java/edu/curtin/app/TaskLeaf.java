@@ -41,7 +41,7 @@ public class TaskLeaf extends TaskStructure {
         else
         {
             log.warning(() -> "Invalid time (" + inTime + ") set for ID: " + this.ID);
-            throw new WBSFormatException("Invalid estimated time for " + this.ID + ". Time must be a positive integer.");
+            throw new WBSLogicException("Invalid estimated time for " + this.ID + ". Time must be a positive integer.");
             // unlikely to happen as there are guards in place beforehand
         }
     }

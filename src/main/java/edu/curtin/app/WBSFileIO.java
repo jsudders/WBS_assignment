@@ -9,10 +9,10 @@ import java.util.logging.Logger;
 import java.util.HashMap;
 import java.io.FileNotFoundException;
 
-public class WBS_FileIO {
-    private static final Logger log = Logger.getLogger(WBS_FileIO.class.getName());
+public class WBSFileIO {
+    private static final Logger log = Logger.getLogger(WBSFileIO.class.getName());
     
-    public HashMap<String, TaskStructure> readWBS(String filename) throws IOException, WBSException, FileNotFoundException // let output be a hashmap of all the baseTasks (tasks with no parent set) and throw exceptions to be handled outside
+    public static HashMap<String, TaskStructure> readWBS(String filename) throws IOException, WBSException, FileNotFoundException // let output be a hashmap of all the baseTasks (tasks with no parent set) and throw exceptions to be handled outside
     {
         try(BufferedReader reader = new BufferedReader(new FileReader(filename))) // try to open a bufferedReader with a fileReader from given filename
         {
@@ -37,7 +37,7 @@ public class WBS_FileIO {
                         log.fine(() -> "\tParentTask = " + parentTask);
                         if(TaskStructure.findTask(baseTasks, parentTask) instanceof TaskLeaf) // guard in case the file is formatted incorrectly
                         {
-                            throw new WBSFormatException("Task " + parentTask + " has subtasks but is meant to be a leaf.");
+                            throw new WBSLogicException("Task " + parentTask + " has subtasks but is meant to be a leaf.");
                         }
 
                         existingParent = (TaskParent) TaskStructure.findTask(baseTasks, parentTask);
@@ -55,7 +55,7 @@ public class WBS_FileIO {
                     
                     if(TaskStructure.findTask(baseTasks, task) != null)
                     {
-                        throw new WBSFormatException("Cannot add subtask " + task + " as task already exists.");
+                        throw new WBSLogicException("Cannot add subtask " + task + " as task already exists.");
                     }
 
                     switch(lineParts.length)
@@ -117,7 +117,7 @@ public class WBS_FileIO {
         // if an error occurs, such as IOException, the baseTasks will not be returned and the program will be closed when this is processed
     }
 
-    public void writeToWBS(String filename, HashMap<String, TaskStructure> baseTasks)
+    public static void writeToWBS(String filename, HashMap<String, TaskStructure> baseTasks)
     {
         // if the baseTasks is already empty/null (should have had an error thrown before this), do not attempt to write to file as this will override the data (whilst incorrect) and give an empty file
         if(baseTasks.isEmpty() || baseTasks == null)
