@@ -6,21 +6,23 @@ import java.io.FileWriter;
 import java.io.IOException;
 import java.util.logging.Level;
 import java.util.logging.Logger;
+import java.util.HashMap;
+import java.io.FileNotFoundException;
 
 public class WBS_FileIO {
     private static final Logger log = Logger.getLogger(WBS_FileIO.class.getName());
     
-    public TaskParent readWBS(String filename) throws IOException, WBSException // let output be task object and add exceptions
+    public HashMap<String, TaskStructure> readWBS(String filename) throws IOException, WBSException, FileNotFoundException // let output be a hashmap of all the baseTasks (tasks with no parent set) and throw exceptions to be handled outside
     {
-        TaskParent generalParent = new TaskParent("", "");
-        log.fine(() -> "Created generalParent"); // initialise generalParent with no taskID and no description
         try(BufferedReader reader = new BufferedReader(new FileReader(filename))) // try to open a bufferedReader with a fileReader from given filename
         {
+            HashMap<String, TaskStructure> baseTasks = new HashMap<>();
+            log.fine(() -> "Created baseTasks"); // initialise task map
             String line = reader.readLine();
             while(line != null) // while there is still lines in the file
             {
                 line = line.strip();
-                log.log(Level.INFO, "Processing line: {0}", line); // strip the line and log the line that is being processed
+                log.log(Level.INFO, "Processing line: \"{0}\"", line); // strip the line and log the line that is being processed
                 if(!line.isEmpty())
                 {
                     String task;
@@ -33,7 +35,12 @@ public class WBS_FileIO {
                     if(!(parentTask.isBlank()) && !(parentTask.isEmpty())) // if the line has a parentTask
                     {
                         log.fine(() -> "\tParentTask = " + parentTask);
-                        existingParent = (TaskParent) generalParent.findTask(parentTask); // find the taskStructure in the WBS owner
+                        if(TaskStructure.findTask(baseTasks, parentTask) instanceof TaskLeaf) // guard in case the file is formatted incorrectly
+                        {
+                            throw new WBSFormatException("Task " + parentTask + " has subtasks but is meant to be a leaf.");
+                        }
+
+                        existingParent = (TaskParent) TaskStructure.findTask(baseTasks, parentTask);
 
                         if(existingParent == null) // if the task cannot be found, through an error
                         {
@@ -46,74 +53,98 @@ public class WBS_FileIO {
                     description = lineParts[2].strip();
                     // all taskStructures have this information, so preset task and description
                     
-                    if(existingParent == null) // if the task is not a subtask of anything, set the parent to be the WBS owner
+                    if(TaskStructure.findTask(baseTasks, task) != null)
                     {
-                        existingParent = generalParent;
+                        throw new WBSFormatException("Cannot add subtask " + task + " as task already exists.");
                     }
-                    
+
                     switch(lineParts.length)
                     {
                         case 3 -> {
                             // task does not have estimate category
-                            TaskParent newTaskParent = new TaskParent(existingParent, task, description);
-                            existingParent.addSubtask(newTaskParent, generalParent);
-                            // create the taskParent and add it as a subtask to the taskparent
+                            if(existingParent == null) // if theres no existing parent, add the task with no parent and put it in the baseTasks map
+                            {
+                                TaskParent newTaskParent = new TaskParent(task, description);
+                                baseTasks.put(task, newTaskParent);
+                            }
+                            else // if it does have a parent, add the task with the parent and put it in the existing parents subtasks
+                            {
+                                TaskParent newTaskParent = new TaskParent(existingParent, task, description);
+                                existingParent.addSubtask(newTaskParent, baseTasks);
+                            }
                         }
                         case 4 -> {
                             // the task does have estimate category
                             if(lineParts[3].equals("")) // if there is a line for estimates, but nothing in it, guard the Integer.valueOf whilst still adding the estimate
                             {
-                                estimate = null; 
+                                estimate = null;
                             }
                             else
                             {
                                 estimate = Integer.valueOf(lineParts[3].strip()); // if there is already an estimate present, strip the line and add it to the taskLeaf
                             }
-                            TaskLeaf newTaskLeaf = new TaskLeaf(existingParent, task, description, estimate);
-                            existingParent.addSubtask(newTaskLeaf, generalParent);
-                            // create a new task leaf and add it as a subtask to the taskparent
+                            if(existingParent == null)
+                            {
+                                TaskLeaf newTaskLeaf = new TaskLeaf(task, description, estimate);
+                                baseTasks.put(task, newTaskLeaf);
+                            }
+                            else
+                            {
+                                TaskLeaf newTaskLeaf = new TaskLeaf(existingParent, task, description, estimate);
+                                existingParent.addSubtask(newTaskLeaf, baseTasks); 
+                            }
                         }
                         default -> // task has less than 3 or more than 4 parts
                             throw new WBSFormatException("This line is in an unknown format." + line); 
                     }
-
-                    
                 }
                 line = reader.readLine(); // read the next line
             }
+            return baseTasks;
         }
-        catch (IOException io)
+        catch (FileNotFoundException file)
         {
-            log.severe(() -> "Reading file failed with error: " + io);
-            System.out.println("Error reading the file.");
+            log.severe(() -> "Reading failed with error: " + file);
+            System.out.println("File does not exist");
+            throw file;
         }
-        return generalParent;
-        // if an error occurs, such as IOException, the generalParent will be null and the program will be closed when this is processed
+        catch (WBSException io)
+        {
+            log.severe(() -> "Reading file failed with error: " + io.getMessage());
+            System.out.println("Error reading the file.");
+            throw io;
+        }
+        // if an error occurs, such as IOException, the baseTasks will not be returned and the program will be closed when this is processed
     }
 
-    public void writeToWBS(String filename, TaskParent generalParent)
+    public void writeToWBS(String filename, HashMap<String, TaskStructure> baseTasks)
     {
-        // try with resources file writer
-        // loop through generalParent children and write to file, make sure to exclude generalParent itself
-        try(FileWriter fw = new FileWriter(filename))
+        // if the baseTasks is already empty/null (should have had an error thrown before this), do not attempt to write to file as this will override the data (whilst incorrect) and give an empty file
+        if(baseTasks.isEmpty() || baseTasks == null)
         {
-            if(generalParent != null && fw != null) // if initialisation of filewriter worked and WBS structure is valid
+            System.out.println("WBS doesnt exist. Quitting now.");
+            return;
+        }
+        try(FileWriter fw = new FileWriter(filename)) // try with resources file writer
+        {
+            for(TaskStructure task : baseTasks.values()) // for each baseTask, print it (if its a parent task, it will also print subtasks)
             {
-                if(!generalParent.subtasks.isEmpty()) // if the WBS owner has subtasks
-                {
-                    for(TaskStructure task : generalParent.subtasks.values()) // loop through each subtask and print the values
-                    {
-                        fw.write(task.printTask());
-                    }
-                }
+                fw.write(task.printTask());
             }
+            System.out.println("File successfully written to.");
+
+            log.severe("BaseTasks is empty or file is null");
+            System.out.println("Error printing to file.");
         }
         catch(IOException io) // catch any IO exception
         {
             log.severe("Error printing to file");
-            System.out.println("Error printing to file");
+            System.out.println("Error printing to file: " + io.getMessage());
             // as the file writing is only handled when the file is closed, this IOException is unlikely to matter as an IOException will already be thrown during the reading of the file
         }
+
+        System.out.println("Goodbye.");
+
     }
     
 }

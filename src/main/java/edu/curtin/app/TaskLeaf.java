@@ -2,8 +2,7 @@ package edu.curtin.app;
 import java.util.logging.Logger;
 
 public class TaskLeaf extends TaskStructure {
-    TaskParent parent;
-    Integer estTime; // set as Integer so it can be null as it is optional
+    private Integer estTime; // set as Integer so it can be null as it is optional
     private static final Logger log = Logger.getLogger(TaskParent.class.getName());
 
     public TaskLeaf(TaskParent parent, String ID, String description, Integer estTime)
@@ -13,7 +12,21 @@ public class TaskLeaf extends TaskStructure {
         this.description = description;
         this.estTime = estTime;
         log.info(() -> "Created TaskLeaf with ID: " + ID + " under parent: " + parent.ID);
-        // create leaf object and log it
+        // create leaf object with a parent and log it
+    }
+
+    public TaskLeaf(String ID, String description, Integer estTime)
+    {
+        this.ID = ID;
+        this.description = description;
+        this.estTime = estTime;
+        log.info(() -> "Created TaskLeaf with ID: " + ID + " as a base task.");
+        // create leaf object that has no parent
+    }
+
+    public Integer getEstTime()
+    {
+        return this.estTime;
     }
 
     public void setEstTime(int inTime) throws WBSException
@@ -52,16 +65,13 @@ public class TaskLeaf extends TaskStructure {
         String printString;
 
         printString = String.format("; %s ; %s ;", this.ID, this.description); // format the printString for the case that the leaf has no parent and no estimated time
-        if(estTime != null)
+        if(estTime != null) // if there is an estimated time, add this to the string
         {
-            printString = String.format("%s %d", printString, estTime); // if there is an estimated time, add this to the string
+            printString = String.format("%s %d", printString, estTime); 
         }
-        if(parent != null)
+        if(hasParent()) // if there is a parent, add this to the string
         {
-            if(!this.parent.ID.equals("")) // if the parent is not the general parent. skips the space of the parent for better fileIO format
-            {
-                printString = String.format("%s %s", this.parent.ID, printString); // if there is a parent, add this to the string
-            }
+            printString = String.format("%s %s", this.parent.ID, printString); 
         }
         printString += "\n"; // format for the next entry
         return printString;
@@ -91,7 +101,7 @@ public class TaskLeaf extends TaskStructure {
             log.info(() -> "Found ID " + searchID);
             return this; // return the object and log it
         }
-        log.fine(() -> "Search ID: " + searchID + " is not equal to task ID " + this.ID);
+        log.finest(() -> "Search ID: " + searchID + " is not equal to task ID " + this.ID);
         return null; // otherwise return null
     }
 }

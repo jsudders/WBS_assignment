@@ -1,4 +1,94 @@
-Sept 05, 2026 2:29:13 PM edu.curtin.app.TaskLeaf findTask
-INFO: Found ID R
-Sept 05, 2026 2:29:13 PM edu.curtin.app.App performEstimates
-INFO: User entered: R
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: ; A ; Market research ; 10
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: A as a base task.
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: ; B ; Prototyping ; 45
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: B as a base task.
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: ; C ; Game design
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskParent <init>
+INFO: General Parent created
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: C ; D ; Identify core game concepts ; 15
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: D under parent: C
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: C ; E ; Develop basic storyline ; 25
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: E under parent: C
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: C ; F ; Develop game world and mechanics ; 55
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: F under parent: C
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: C ; G ; Specify game characters and abilities ;
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: G under parent: C
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: ; H ; Game implementation
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskParent <init>
+INFO: General Parent created
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: H ; I ; Artwork ; 90
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: I under parent: H
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: H ; J ; Coding
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskParent <init>
+INFO: Task parent (with parent) created with ID: J
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: J ; K ; Core game logic ;
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: K under parent: J
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: J ; L ; Networking ; 35
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: L under parent: J
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: J ; M ; Player interface ;
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: M under parent: J
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: ; N ; Testing
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskParent <init>
+INFO: General Parent created
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: N ; O ; Functionality ;
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: O under parent: N
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: N ; P ; Playability ;
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: P under parent: N
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: N ; Q ; Rework ;
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: Q under parent: N
+Sept 07, 2026 10:58:57 AM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: ; R ; Release ;
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: R as a base task.
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf D added to recursive list of C
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf E added to recursive list of C
+Sept 07, 2026 10:58:57 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf F added to recursive list of C
+Sept 07, 2026 10:58:58 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf G added to recursive list of C
+Sept 07, 2026 10:58:58 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf I added to recursive list of H
+Sept 07, 2026 10:58:58 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf K added to recursive list of J
+Sept 07, 2026 10:58:58 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf L added to recursive list of J
+Sept 07, 2026 10:58:58 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf M added to recursive list of J
+Sept 07, 2026 10:58:58 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf P added to recursive list of N
+Sept 07, 2026 10:58:58 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf Q added to recursive list of N
+Sept 07, 2026 10:58:58 AM edu.curtin.app.TaskParent findRecursiveLeaves
+INFO: taskleaf O added to recursive list of N

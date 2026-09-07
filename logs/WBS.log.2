@@ -1,8 +1,26 @@
-Sept 05, 2026 2:52:40 PM edu.curtin.app.App performEstimates
-INFO: User entered: c
-Sept 05, 2026 2:52:40 PM edu.curtin.app.App performEstimates
-INFO: Task not found
-Sept 05, 2026 2:56:13 PM edu.curtin.app.TaskLeaf findTask
-INFO: Found ID A
-Sept 05, 2026 2:56:13 PM edu.curtin.app.App performEstimates
-INFO: User entered: A
+Sept 07, 2026 12:11:13 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: Created baseTasks
+Sept 07, 2026 12:11:13 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: "; A ; Market research ; 10"
+Sept 07, 2026 12:11:13 PM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: A as a base task.
+Sept 07, 2026 12:11:13 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: "; B ; Prototyping ; 45"
+Sept 07, 2026 12:11:13 PM edu.curtin.app.TaskLeaf findTask
+FINEST: Search ID: B is not equal to task ID A
+Sept 07, 2026 12:11:13 PM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: B as a base task.
+Sept 07, 2026 12:11:13 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: "; C ; Game design ; 12"
+Sept 07, 2026 12:11:13 PM edu.curtin.app.TaskLeaf findTask
+FINEST: Search ID: C is not equal to task ID A
+Sept 07, 2026 12:11:13 PM edu.curtin.app.TaskLeaf findTask
+FINEST: Search ID: C is not equal to task ID B
+Sept 07, 2026 12:11:13 PM edu.curtin.app.TaskLeaf <init>
+INFO: Created TaskLeaf with ID: C as a base task.
+Sept 07, 2026 12:11:13 PM edu.curtin.app.WBS_FileIO readWBS
+INFO: Processing line: "C ; D ; Identify core game concepts ; 15"
+Sept 07, 2026 12:11:13 PM edu.curtin.app.WBS_FileIO readWBS
+FINE: 	ParentTask = C
+Sept 07, 2026 12:11:13 PM edu.curtin.app.WBS_FileIO readWBS
+SEVERE: Reading file failed with error: edu.curtin.app.WBSFormatException: Task C has subtasks but is meant to be a leaf.

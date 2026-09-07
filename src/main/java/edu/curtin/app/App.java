@@ -13,14 +13,13 @@ import java.util.logging.Level;
 import java.util.logging.Logger;
 
 public class App {
-    // either create a list of TaskStructure/Parents that don't have any parents or create a TaskStructure or TaskParent to house them all
-    private TaskParent generalParent;
     private static final Logger log = Logger.getLogger(App.class.getName());
-    int estimationConfiguration = 3;
-    int numEstimates = 3;
-    Map<Integer, EffortEstimate> estimateOptions = new HashMap<>();
+    private int estimationConfiguration = 3;
+    private int numEstimates = 3;
+    private Map<Integer, EffortEstimate> estimateOptions = new HashMap<>();
     private Scanner sc;
     private WBS_FileIO fileIO;
+    private HashMap<String, TaskStructure> baseTasks;
 
     public static void main(String[] args) {
         try
@@ -49,56 +48,54 @@ public class App {
         this.estimateOptions.put(2, new MedianEstimate());
         this.estimateOptions.put(3, new DiscussionEstimate());
         // pre-set the options for estimates for strategy method
-        while(true) // while no valid file has been entered
+        try
         {
-            try
+        
+            this.fileIO = new WBS_FileIO(); // generate a new fileIO instance to read and write to the file
+            this.baseTasks = fileIO.readWBS(filename); // reading file gives a map of all basetasks that don't have a parent
+        
+            if((baseTasks != null) && !(baseTasks.isEmpty())) // as long as reading the file worked, display all tasks
             {
-                this.fileIO = new WBS_FileIO(); // generate a new fileIO instance to read and write to the file
-                this.generalParent = fileIO.readWBS(filename); // reading file gives a "generalParent"
-                if(generalParent != null) // as long as reading the file worked, display all tasks
+                for(TaskStructure task : baseTasks.values())
                 {
-                    generalParent.display("");
-                    
-                    int totalTime = generalParent.calcEstTime(); // calculate estimated time for the whole WBS structure
-                    int unknownTasks = TaskStructure.calcUnknownTasks(generalParent); // calculate how many leaves there are without estimated time
+                    task.display("");
+                }
+                
+                int totalTime = TaskStructure.calcTotalTime(baseTasks); // calculate estimated time for the whole WBS structure
+                int unknownTasks = TaskStructure.calcUnknownTasks(baseTasks); // calculate how many leaves there are without estimated time
 
-                    if(unknownTasks == -1)
-                    {
-                        System.out.println("Unable to calculate the number of unknown tasks due to catastrophic error. Please review your WBS file and try again.");
-                        // if the recursive leaf function fails, unknownTasks is set to -1
-                        running = false; // the program will close because this is a catastrophic error. it is likely that this error in the task structure will be caught before this.
-                    }
-                    else
-                    {
-                        printEffortSummary(totalTime, unknownTasks); // if unknownTasks was successfully calculated, print the effort summary
-                    }
-
-                    break;
+                if(unknownTasks == -1)
+                {
+                    System.out.println("Unable to calculate the number of unknown tasks due to catastrophic error. Please review your WBS file and try again.");
+                    // if the recursive leaf function fails, unknownTasks is set to -1
+                    running = false; // the program will close because this is a catastrophic error. it is likely that this error in the task structure will be caught before this.
                 }
                 else
-                { // if the generalParent is null, then the program has not read/saved the data from the file correctly. throw a WBSFormatException
-                    throw new WBSFormatException("Unknown error occured whilst trying to read file. Make sure the file is in the correct format.");
+                {
+                    printEffortSummary(totalTime, unknownTasks); // if unknownTasks was successfully calculated, print the effort summary
                 }
             }
-            catch(IOException io) // if the file doesn't exist, end the program
-            {
-                System.out.println("Cannot open file. File is invalid. Please try again.");
-                running = false;
-                break;
+            else
+            { // if the basetasks map is null, then the program has not read/saved the data from the file correctly. throw a WBSFormatException
+                System.out.println("BaseTasks empty or null.");
+                throw new WBSFormatException("Unknown error occured whilst trying to read file. Make sure the file is in the correct format.");
             }
-            catch(WBSException fe) // if any WBSException is thrown (from the WBSFormatException of not saving data correctly, or something that is otherwise thrown in the file reading), print the error and quit the program
-            {
-                System.out.println(fe + ". Quitting program now.");
-                running = false;
-                break;
-            }
-            catch(Exception e) // catch-all at the end.
-            {
-                log.severe(() -> "Unknown exception " + e);
-                System.out.println("Exception: " + e);
-                running = false;
-                break;
-            }
+        }
+        catch(IOException io) // if the file doesn't exist, end the program
+        {
+            System.out.println("Cannot open file. File is invalid. Please try again.");
+            running = false;
+        }
+        catch(WBSException fe) // if any WBSException is thrown (from the WBSFormatException of not saving data correctly, or something that is otherwise thrown in the file reading), print the error and quit the program
+        {
+            System.out.println("WBSFormatException " + fe.getMessage() + ".. Quitting program now.");
+            running = false;
+        }
+        catch(Exception e) // catch-all at the end.
+        {
+            log.severe(() -> "Other exception " + e);
+            System.out.println("Exception: " + e);
+            running = false;
         }
         promptContinue();
         
@@ -109,9 +106,9 @@ public class App {
             switch(menuOption)
             {
                 case 1 -> {
-                    performEstimates(); // if option 1, perform estimates.
+                    performEstimates();
                 }
-                case 2 -> { 
+                case 2 -> {
                     numEstimates = enterN("Please enter the number of estimators for this program.", "Estimators: "); // get the number of estimators and set it to local estimates variable
                     int approachOption = getMenuOption("approach"); // print approach options and get the choice
                     switch(approachOption)
@@ -133,8 +130,7 @@ public class App {
                 }
                 case 0 -> { // case of quitting, write to the file
                     System.out.println("Writing to file...");
-                    fileIO.writeToWBS(filename, generalParent);
-                    System.out.println("Goodbye.");
+                    fileIO.writeToWBS(filename, baseTasks);
                     running = false;
                     break;
                 }
@@ -162,7 +158,7 @@ public class App {
                     optionLower = 1;
                     optionHigher = 3;
                 }
-                default -> { System.out.println("Internal error.");} // this does not get executed in the current iteration
+                default -> { System.out.println("Internal error.");} // not possible in current iteration
             } // this will loop the prompt until the user enters a valid menu option
             try
             {
@@ -207,7 +203,7 @@ public class App {
                 }
                 else
                 {
-                    return N;  // if the user entry is valid, return it
+                    return N;
                 }
                 
             }
@@ -228,12 +224,12 @@ public class App {
             System.out.println(prompt);
             System.out.print(enterLine);
 
-            String value = sc.next(); // take the next line of user input for value
-            log.log(Level.FINE, "User entered {0} for value", value); // log what the user inputted
+            String value = sc.next();
+            log.log(Level.FINE, "User entered {0} for value", value);
             sc.nextLine(); // clear the buffer
             if(value.isEmpty()) // guard in case the value is empty
             {
-                System.out.println("Please enter a valid string."); 
+                System.out.println("Please enter a valid string.");
             }
             else
             {
@@ -278,34 +274,40 @@ public class App {
         try
         {
             String taskID = enterString("Please enter the taskID (of any task) to set the effort estimates.", "TaskID: ");
-            TaskStructure foundTask = generalParent.findTask((taskID).strip());
+            TaskStructure foundTask = TaskStructure.findTask(baseTasks, (taskID).strip());
             // get the taskID for the estimating task and get the taskStructure for it.
-            log.info(() -> "User entered: " + taskID + " for perform estimates"); // log user input and the performing of estimate
-            if((foundTask == null) || (taskID.isEmpty())) 
+
+            log.info(() -> "User entered: " + taskID + " for perform estimates"); 
+            // log user input and the performing of estimate
+
+
+            if((foundTask == null) || (taskID.isEmpty())) // if the task cannot be found within the structure or the taskID is empty, throw an error
             {
-                log.info(() -> "Task not found"); // log that the task cannot be found
+                log.info(() -> "Task not found"); 
                 throw new WBSFormatException("Task ID is either invalid or doesn't exist.");
-                // if the task cannot be found within the structure or the taskID is empty, throw an error
             }
+
             List<TaskLeaf> leafList = new ArrayList<>(); // initialise a leafList for the instance that task entered was a parent and estimates are needed for each subtask.
-            if(foundTask instanceof TaskParent taskParent)
+            
+            if(foundTask instanceof TaskParent taskParent) // if the task is a parent, set the leaves to each of the subtasks
             {
                 leafList = taskParent.findRecursiveLeaves(leafList);
-            }// if the task is a parent, set the leaves to each of the subtasks
-            else
+            }
+            else // otherwise, the leafList is just the initial task
             {
                 leafList.add((TaskLeaf) foundTask);
-            } // otherwise, the leafList is just the initial task
-            EffortEstimate estimateType = estimateOptions.get(estimationConfiguration);
-            // get the estimationType based on configuration
+            }
+
+            EffortEstimate estimateType = estimateOptions.get(estimationConfiguration); // get the estimationType based on configuration
+            
             for (TaskLeaf leaf : leafList) // looping through each task in the leafList
             {
                 System.out.println("\nPlease enter the estimates for task " + leaf.ID + " below.");
                 List<Integer> estimates = new ArrayList<>(); // initialise ArrayList to keep all of the estimates in
-                for(int i = 0; i < numEstimates; i++)
+                for(int i = 0; i < numEstimates; i++) // get the estimates for each estimator
                 {
                     estimates.add(enterN("", "Please enter the estimate for estimator " + (i + 1) + ": "));
-                    // get the estimates for each estimator
+                    
                 }
                 
                 System.out.println("Estimates for task: " + leaf.ID); // display the estimates from each estimator
@@ -330,7 +332,7 @@ public class App {
         }
         catch(WBSException wbs)
         {
-            System.out.println(wbs + " Exiting now."); // graceful quit
+            System.out.println("WBSException: " + wbs.getMessage() + " Exiting now."); // graceful quit
         }
     }
 }
